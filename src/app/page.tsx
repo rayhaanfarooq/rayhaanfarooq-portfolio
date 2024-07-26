@@ -8,10 +8,17 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { logPageView } from './analytics';
+import { useEffect } from 'react';
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+
+  useEffect(() => {
+    logPageView(); // Log the initial page view
+  }, []);
+
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
