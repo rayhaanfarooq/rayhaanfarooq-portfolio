@@ -269,14 +269,14 @@ export default function Page() {
                   with a direct question on LinkedIn
                 </Link>{" "}
 
-                or 
+                
 
-                <Link
+                {/* <Link
                   href={DATA.contact.social.email.url}
                   className="text-blue-500 hover:underline"
                 >
                    send me an email 
-                </Link>{" "}
+                </Link>{" "} */}
               </p>
 
             </div>
