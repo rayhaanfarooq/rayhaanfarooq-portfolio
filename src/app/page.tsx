@@ -114,7 +114,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* <section id="projects">
+      <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -147,7 +147,7 @@ export default function Page() {
                   title={project.title}
                   description={project.description}
                   dates={project.dates}
-                  tags={project.technologies}
+                  tags={project.technologies.filter((tag) => typeof tag === "string")}
                   image={project.image}
                   video={project.video}
                   links={project.links}
@@ -156,7 +156,7 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section id="clubs">
 

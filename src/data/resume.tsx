@@ -16,7 +16,7 @@ export const DATA = {
   avatarUrl: "/me.HEIC",
 
   skills: [
-    "Reac.js",
+    "React.js",
     "Typescript",
     "Node.js",
     "Python",
@@ -110,34 +110,150 @@ export const DATA = {
   ],
   projects: [
     {
-      // title: "Netflix CLone",
-      // href: "https://chatcollect.com",
-      // dates: "Jan 2024 - Feb 2024",
-      // active: true,
-      // description:
-      //   "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
-      // technologies: [
-      //   "Next.js",
-      //   "Typescript",
-      //   "PostgreSQL",
-      //   "Prisma",
-      //   "TailwindCSS",
-      //   "Stripe",
-      //   "Shadcn UI",
-      //   "Magic UI",
-      // ],
-      // links: [
-      //   {
-      //     type: "Website",
-      //     href: "https://chatcollect.com",
-      //     icon: <Icons.globe className="size-3" />,
-      //   },
-      // ],
-      // image: "",
-      // video:
-      //   "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+      title: "OpenGround",
+      href: "",
+      dates: "August 2024 - Present",
+      active: true,
+      description:
+      "The premimum versions of AI are currently unaccesible. I wish to change that. Will provide more info when finished.",
+       
+      technologies: [
+        "Next.js",
+        "React.js",
+        "Firebase",
+        "TailwindCSS",
+        "Stripe",
+        "Shadcn UI",
+        "Magic UI",
+        "Vercel AI SDK",
+      ],
+      links: [
+        {
+          
+          type: "Coming Soon",
+          href: "",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/openground.png",
+      video: ""
+       
     },
-    
+
+    {
+      title: "EchoGPT",
+      href: "",
+      dates: "August 2024 - Present",
+      active: true,
+      description:
+      "Worked in a team of 4 to develop a chatbot using the OpenAI API.",
+       
+      technologies: [
+        "Next.js",
+        "React.js",
+        "Firebase",
+        "TailwindCSS",
+        "Open AI",
+
+       
+      ],
+      links: [
+        {
+          
+          type: "Coming Soon",
+          href: "",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/echogpt.png",
+      video: ""
+       
+    },
+
+    {
+      title: "Raven Haven",
+      href: "",
+      dates: "August 2024 - Present",
+      active: true,
+      description:
+      "Developing a software for current residents and future residents to use for informationr regarding residence",
+       
+      technologies: [
+        "Next.js",
+        "React.js",
+        "Firebase",
+        "TailwindCSS",
+        "Shadcn UI",
+
+       
+      ],
+      links: [
+        {
+          type: "",
+          href: "",
+          icon: "",
+        },
+      ],
+      image: "/ravenhaven.png",
+      video: ""
+       
+    },
+
+    {
+      title: "AI Generated Flashcards",
+      href: "",
+      dates: "August 2024 - Present",
+      active: true,
+      description:
+      "Working on developing a SaaS that uses the OpenAI API to generate flashcards for students to use",
+       
+      technologies: [
+        "Next.js",
+        "React.js",
+        "Firebase",
+        "TailwindCSS",
+        "Open AI",
+      ],
+
+      links: [
+        {
+          
+          type: "Coming Soon",
+          href: "",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/flashcards.png",
+      video: ""
+       
+    },
+
+    {
+      title: "Pantry Tracker",
+      href: "",
+      dates: "August 2024 - Present",
+      active: true,
+      description:
+      "Working on developing a SaaS that uses the OpenAI API to generate flashcards for students to use",
+       
+      technologies: [
+        "Next.js",
+        "React.js",
+        "Firebase",
+        "TailwindCSS",
+      ],
+
+      links: [
+        {
+          type: "Website",
+          href: "",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/pantrytracker.png",
+      video: ""
+       
+    },
   ],
 
   clubs: [
