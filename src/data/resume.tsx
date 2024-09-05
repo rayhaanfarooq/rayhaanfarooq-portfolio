@@ -16,14 +16,14 @@ export const DATA = {
   avatarUrl: "/me.HEIC",
 
   skills: [
-    "React",
+    "Reac.js",
     "Typescript",
     "Node.js",
     "Python",
-    "PostgresSQL",
     "Java",
-    "Springboot",
     "TailwindCSS",
+    "Next.js",
+    "Firebase",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
