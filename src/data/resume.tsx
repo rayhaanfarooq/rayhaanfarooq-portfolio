@@ -115,13 +115,13 @@ export const DATA = {
       dates: "August 2024 - Present",
       active: true,
       description:
-      "The premimum versions of AI are currently unaccesible. I wish to change that. Will provide more info when finished.",
+      "The premium versions of AI are currently unaccesible. I wish to change that. Will provide more info when finished.",
        
       technologies: [
         "Next.js",
         "React.js",
         "Firebase",
-        "TailwindCSS",
+        "Tailwind CSS",
         "Stripe",
         "Shadcn UI",
         "Magic UI",
@@ -152,7 +152,7 @@ export const DATA = {
         "Next.js",
         "React.js",
         "Firebase",
-        "TailwindCSS",
+        "Tailwind CSS",
         "Open AI",
 
        
@@ -182,7 +182,7 @@ export const DATA = {
         "Next.js",
         "React.js",
         "Firebase",
-        "TailwindCSS",
+        "Tailwind CSS",
         "Shadcn UI",
 
        
@@ -211,7 +211,7 @@ export const DATA = {
         "Next.js",
         "React.js",
         "Firebase",
-        "TailwindCSS",
+        "Tailwind CSS",
         "Open AI",
       ],
 
@@ -240,7 +240,7 @@ export const DATA = {
         "Next.js",
         "React.js",
         "Firebase",
-        "TailwindCSS",
+        "Tailwind CSS",
       ],
 
       links: [
