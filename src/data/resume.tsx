@@ -62,6 +62,18 @@ export const DATA = {
 
   work: [
     {
+      company: "Carleton University Teaching Assistant",
+      href: "https://carleton.ca",
+      badges: [],
+      location: "Remote",
+      title: "Fellow",
+      logoUrl: "/carleton.PNG",
+      start: "September 2024",
+      end: "December 2024",
+      description:
+        "Working as a TA for the course COMP1406(Introduction to Computer Science II). I hold office hours, grade assignments and help students with their code",
+    },
+    {
       company: "Headstarter Ai",
       href: "https://app.theheadstarter.com",
       badges: [],
