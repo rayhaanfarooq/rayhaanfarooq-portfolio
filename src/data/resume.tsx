@@ -24,6 +24,11 @@ export const DATA = {
     "TailwindCSS",
     "Next.js",
     "Firebase",
+    "C",
+    "C++",
+    "OpenAI"
+
+    
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -141,6 +146,35 @@ export const DATA = {
     },
 
     {
+      title: "Flash.AI",
+      href: "",
+      dates: "August 2024 - Present",
+      active: true,
+      description:
+      "Developed and deployed an AI powered flashcard generator that uses the OpenAI API to generate flashcards for students to use. For now, I've made the product free",
+       
+      technologies: [
+        "Next.js",
+        "React.js",
+        "Firebase",
+        "Tailwind CSS",
+        "Open AI",
+      ],
+
+      links: [
+        {
+          
+          type: "Website",
+          href: "https://flashaii.netlify.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/flashcards.png",
+      video: ""
+       
+    },
+
+    {
       title: "EchoGPT",
       href: "",
       dates: "August 2024 - Present",
@@ -199,34 +233,7 @@ export const DATA = {
        
     },
 
-    {
-      title: "AI Generated Flashcards",
-      href: "",
-      dates: "August 2024 - Present",
-      active: true,
-      description:
-      "Working on developing a SaaS that uses the OpenAI API to generate flashcards for students to use",
-       
-      technologies: [
-        "Next.js",
-        "React.js",
-        "Firebase",
-        "Tailwind CSS",
-        "Open AI",
-      ],
-
-      links: [
-        {
-          
-          type: "Coming Soon",
-          href: "",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/flashcards.png",
-      video: ""
-       
-    },
+    
 
     {
       title: "Pantry Tracker",
