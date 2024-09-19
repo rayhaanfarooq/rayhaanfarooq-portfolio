@@ -310,6 +310,40 @@ export const DATA = {
   ],
 
   hackathons: [
+
+    {
+      title: "ENGCOMM x MONTREAL",
+      dates: "October, 2024",
+      location: "Montreal, Ontario",
+      description:
+        "Participated in ENGCOMM x MONTREAL where my team and I participated in a case competition",
+      image:
+        "engcomm.png",
+      links: [
+        {
+          title: "Source",
+          icon: <FaRegNewspaper className="h-4 w-4" />,
+          href: "https://www.kanatanetworker.com/students-win-gold-with-green-tech-pitch-at-knba-hackathon/",
+        },
+      ],
+    },
+
+    {
+      title: "Discover Technata Hacks",
+      dates: "October, 2024",
+      location: "Ottawa, Ontario",
+      description:
+        "Participated in the 2024 hosting of Discover Technata Hacks",
+      image:
+        "discover2023.JPG",
+      links: [
+        {
+          title: "Source",
+          icon: <FaRegNewspaper className="h-4 w-4" />,
+          href: "https://www.kanatanetworker.com/students-win-gold-with-green-tech-pitch-at-knba-hackathon/",
+        },
+      ],
+    },
     {
       title: "DreamLaunch Hackathon",
       dates: "November 2023",
