@@ -175,12 +175,12 @@ export const DATA = {
     },
 
     {
-      title: "EchoGPT",
+      title: "DermAI",
       href: "",
       dates: "August 2024 - Present",
       active: true,
       description:
-      "Worked in a team of 4 to develop a chatbot using the OpenAI API.",
+      "Worked in a team of 4 to develop a chatbot using the OpenAI API. Tailored the chatbot to be a AI dermatologist to be able to handle any inquries regarding the skin",
        
       technologies: [
         "Next.js",
@@ -199,7 +199,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/echogpt.png",
+      image: "/dermai.png",
       video: ""
        
     },
