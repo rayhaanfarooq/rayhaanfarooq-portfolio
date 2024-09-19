@@ -180,7 +180,8 @@ export const DATA = {
       dates: "August 2024 - Present",
       active: true,
       description:
-      "Worked in a team of 4 to develop a chatbot using the OpenAI API. Tailored the chatbot to be a AI dermatologist to be able to handle any inquries regarding the skin",
+      "Worked in a team of 4 to develop a chatbot using the OpenAI API. Tailored the chatbot to be a AI dermatologist to be able to handle any inquries regarding the skin. Being an advent user of skincare the confusing ingredients always bothered me, so I decided to develop a chatbot specifically for skincare",
+      
        
       technologies: [
         "Next.js",
@@ -194,8 +195,8 @@ export const DATA = {
       links: [
         {
           
-          type: "Coming Soon",
-          href: "",
+          type: "Website",
+          href: "https://derm-ai-kappa.vercel.app",
           icon: <Icons.globe className="size-3" />,
         },
       ],
