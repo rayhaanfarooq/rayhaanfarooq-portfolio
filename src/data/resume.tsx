@@ -323,7 +323,7 @@ export const DATA = {
         {
           title: "Source",
           icon: <FaRegNewspaper className="h-4 w-4" />,
-          href: "https://www.kanatanetworker.com/students-win-gold-with-green-tech-pitch-at-knba-hackathon/",
+          href: "",
         },
       ],
     },
@@ -340,7 +340,7 @@ export const DATA = {
         {
           title: "Source",
           icon: <FaRegNewspaper className="h-4 w-4" />,
-          href: "https://www.kanatanetworker.com/students-win-gold-with-green-tech-pitch-at-knba-hackathon/",
+          href: "",
         },
       ],
     },
