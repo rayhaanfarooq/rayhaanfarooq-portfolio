@@ -211,7 +211,7 @@ export const DATA = {
       dates: "August 2024 - Present",
       active: true,
       description:
-      "Developing a software for current residents and future residents to use for informationr regarding residence",
+      "Developing a software for current residents and future residents to use for information regarding residence",
        
       technologies: [
         "Next.js",
