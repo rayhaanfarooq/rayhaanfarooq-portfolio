@@ -5,7 +5,7 @@ import { CodeIcon, HomeIcon, NotebookIcon, PencilLine } from "lucide-react";
 export const DATA = {
   name: "Rayhaan Farooq",
   initials: "RF",
-  url: "https://dillion.io",
+  url: "https://rayhaanfarooq.netlify.app",
   location: "Ottawa, CA",
   locationLink: "https://www.google.com/maps/place/ottawa",
   description:
@@ -77,18 +77,6 @@ export const DATA = {
       end: "December 2024",
       description:
         "Working as a TA for the course COMP1406(Introduction to Computer Science II). I hold office hours, grade assignments and help students with their code",
-    },
-    {
-      company: "Headstarter Ai",
-      href: "https://app.theheadstarter.com",
-      badges: [],
-      location: "Remote",
-      title: "Fellow",
-      logoUrl: "/headstarter.jpg",
-      start: "July 2024",
-      end: "September 2024",
-      description:
-        "Joined a fellowship where I am working on multiple projects, doing interviews and competing in hackathons weekly. This fellowship is led from engineers from leading tech companies",
     },
     {
       company: "Hack the Hill",
