@@ -250,6 +250,53 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
+
+      <section id="competitions">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 14}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Competitions
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  I Love To Compete
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                My enthusiasm for innovation and problem-solving motivates me to participate in pitch and case competitions,
+                 where I can collaborate with diverse teams to tackle complex challenges. To date, I have taken part in {DATA.competitions.length} pitch 
+                 and case competitions, and I am eager to continue my journey in this arena. These competitions provide invaluable opportunities
+                 to refine my presentation skills and think critically under pressure. Engaging with talented judges and mentors, as well as
+                  learning from fellow participants, has been eye-opening. Witnessing transformative ideas emerge and develop within just
+                   a few days highlights the power of collaboration and creativity in driving impactful solutions.
+                 
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 15}>
+            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+              {DATA.competitions.map((project, id) => (
+                <BlurFade
+                  key={project.title + project.dates}
+                  delay={BLUR_FADE_DELAY * 15 + id * 0.05}
+                >
+                  <HackathonCard
+                    title={project.title}
+                    description={project.description}
+                    location={project.location}
+                    dates={project.dates}
+                    image={project.image}
+                    links={project.links}
+                  />
+                </BlurFade>
+              ))}
+            </ul>
+          </BlurFade>
+        </div>
+      </section>
+
+
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>

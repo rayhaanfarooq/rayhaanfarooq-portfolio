@@ -26,7 +26,13 @@ export const DATA = {
     "Firebase",
     "C",
     "C++",
-    "OpenAI"
+    "OpenAI",
+    "Astro",
+    "Spring Boot",
+    "PostgreSQL",
+    "AWS",
+   
+
 
     
   ],
@@ -102,6 +108,36 @@ export const DATA = {
     },
   ],
   projects: [
+
+    {
+      title: "Carleton Explorer",
+      href: "",
+      dates: "October 2024 - Present",
+      active: true,
+      description:
+      "Making a simple app for current and future students to have a central app for all events that are happening on campus",
+       
+      technologies: [
+        "Asto",
+        "React.js",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "AWS",
+        "Spring Boot",
+      ],
+      links: [
+        {
+          
+          type: "Coming Soon",
+          href: "",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/carletonexplorer.png",
+      video: ""
+       
+    },
     {
       title: "OpenGround",
       href: "",
@@ -193,44 +229,16 @@ export const DATA = {
        
     },
 
-    {
-      title: "Raven Haven",
-      href: "",
-      dates: "August 2024 - Present",
-      active: true,
-      description:
-      "Developing a software for current residents and future residents to use for information regarding residence",
-       
-      technologies: [
-        "Next.js",
-        "React.js",
-        "Firebase",
-        "Tailwind CSS",
-        "Shadcn UI",
+   
 
-       
-      ],
-      links: [
-        {
-          type: "",
-          href: "",
-          icon: "",
-        },
-      ],
-      image: "/ravenhaven.png",
-      video: ""
-       
-    },
-
-    
-
+  
     {
       title: "Pantry Tracker",
       href: "",
       dates: "August 2024 - Present",
       active: true,
       description:
-      "Working on developing a SaaS that uses the OpenAI API to generate flashcards for students to use",
+      "A simple pantry tracker from which you can add and remove items. I developed this project to learn more about Firebase and how to use it in a project",
        
       technologies: [
         "Next.js",
@@ -300,23 +308,6 @@ export const DATA = {
   hackathons: [
 
     {
-      title: "ENGCOMM x MONTREAL",
-      dates: "October, 2024",
-      location: "Montreal, Ontario",
-      description:
-        "Participated in ENGCOMM x MONTREAL where my team and I participated in a case competition",
-      image:
-        "engcomm.png",
-      links: [
-        {
-          title: "Source",
-          icon: <FaRegNewspaper className="h-4 w-4" />,
-          href: "",
-        },
-      ],
-    },
-
-    {
       title: "Discover Technata Hacks",
       dates: "October, 2024",
       location: "Ottawa, Ontario",
@@ -332,18 +323,7 @@ export const DATA = {
         },
       ],
     },
-    {
-      title: "DreamLaunch Hackathon",
-      dates: "November 2023",
-      location: "Ottawa, Ontario",
-      description:
-        "Further built out MonsTerra",
-      image:
-        "/dreamlaunch.JPG",
-      links: [
-       
-      ],
-    },
+
     {
       title: "Discover Technata Hacks",
       dates: "October, 2023",
@@ -361,4 +341,56 @@ export const DATA = {
       ],
     },
   ],
+
+  competitions : [
+
+    {
+      title: "IEEE SPAC Pitch Competition",
+      dates: "November, 2024",
+      location: "Ottawa, Ontario",
+      description:
+        "Participated in the IEEE SPAC Pitch Competition where I pitched Jodi, a plug and play rebate system for businesses",
+      image:
+        "ieee.png",
+      links: [
+        {
+          title: "Source",
+          icon: <FaRegNewspaper className="h-4 w-4" />,
+          href: "https://www.linkedin.com/posts/ieee-canada-entrepreneurship_the-ieee-canada-entrepreneurship-would-like-activity-7258464309536550912-UIPj?utm_source=share&utm_medium=member_desktop",
+        },
+      ],
+    },
+
+    {
+      title: "ENGCOMM x MONTREAL",
+      dates: "October, 2024",
+      location: "Montreal, Ontario",
+      description:
+        "Participated in ENGCOMM x MONTREAL where my team and I participated in a case competition",
+      image:
+        "engcomm.png",
+      links: [
+        {
+          title: "Source",
+          icon: <FaRegNewspaper className="h-4 w-4" />,
+          href: "",
+        },
+      ],
+    },
+
+
+    {
+      title: "DreamLaunch Hackathon",
+      dates: "November 2023",
+      location: "Ottawa, Ontario",
+      description:
+        "Further built out MonsTerra",
+      image:
+        "/dreamlaunch.JPG",
+      links: [
+       
+      ],
+    },
+
+  ]
 } as const;
