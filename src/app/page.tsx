@@ -266,9 +266,7 @@ export default function Page() {
                 My enthusiasm for innovation and problem-solving motivates me to participate in pitch and case competitions,
                  where I can collaborate with diverse teams to tackle complex challenges. To date, I have taken part in {DATA.competitions.length} pitch 
                  and case competitions, and I am eager to continue my journey in this arena. These competitions provide invaluable opportunities
-                 to refine my presentation skills and think critically under pressure. Engaging with talented judges and mentors, as well as
-                  learning from fellow participants, has been eye-opening. Witnessing transformative ideas emerge and develop within just
-                   a few days highlights the power of collaboration and creativity in driving impactful solutions.
+                 to refine my presentation skills and think critically under pressure. 
                  
                 </p>
               </div>
