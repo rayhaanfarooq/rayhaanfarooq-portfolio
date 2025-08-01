@@ -8,13 +8,12 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-   
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <Analytics />
       <section id="hero">
@@ -134,7 +133,6 @@ export default function Page() {
             </div>
           </BlurFade>
 
-          
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
             {DATA.projects.map((project, id) => (
               <BlurFade
@@ -147,7 +145,9 @@ export default function Page() {
                   title={project.title}
                   description={project.description}
                   dates={project.dates}
-                  tags={project.technologies.filter((tag) => typeof tag === "string")}
+                  tags={project.technologies.filter(
+                    (tag) => typeof tag === "string"
+                  )}
                   image={project.image}
                   video={project.video}
                   links={project.links}
@@ -159,8 +159,7 @@ export default function Page() {
       </section>
 
       <section id="clubs">
-
-      <div className="space-y-12 w-full py-12">
+        <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -171,20 +170,18 @@ export default function Page() {
                   My Current Clubs and Positions
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Besides strong technical skills, I believe clubs make a well rounded software developer. 
-                  Clubs allow oneself to meet other people and develop social and organizational skills
-                  I am currently a member of{" "}{DATA.clubs.length}+ clubs.
-                 . Here are some I am a member of.
+                  Besides strong technical skills, I believe clubs make a well
+                  rounded software developer. Clubs allow oneself to meet other
+                  people and develop social and organizational skills I am
+                  currently a member of {DATA.clubs.length}+ clubs. . Here are
+                  some I am a member of.
                 </p>
               </div>
             </div>
           </BlurFade>
 
           {DATA.clubs.map((clubs, id) => (
-            <BlurFade
-              key={clubs.name}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-            >
+            <BlurFade key={clubs.name} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
               <ResumeCard
                 key={clubs.name}
                 logoUrl={clubs.logoUrl}
@@ -197,16 +194,8 @@ export default function Page() {
               />
             </BlurFade>
           ))}
-
-
-          
-
-
-
-
         </div>
       </section>
-
 
       <section id="hackathons">
         <div className="space-y-12 w-full py-12">
@@ -220,11 +209,16 @@ export default function Page() {
                   I Love To Build
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Having the passion to build tech pushes me to attend hackathons where I can build and learn
-                  new technologies I have never used before. I have so far attended{" "}{DATA.hackathons.length}+ hackathons.
-                  I want to continue to participate in all the hackathons that I can as I find them to be an invaluable experiences.
-                  To be surrounded by not only the talent of the hosts and organizers, but to also be surrounded by the talent of the other participants
-                  is definitely eye opening. I have seen some incredible things come to life in just 2-3 days.
+                  Having the passion to build tech pushes me to attend
+                  hackathons where I can build and learn new technologies I have
+                  never used before. I have so far attended{" "}
+                  {DATA.hackathons.length}+ hackathons. I want to continue to
+                  participate in all the hackathons that I can as I find them to
+                  be an invaluable experiences. To be surrounded by not only the
+                  talent of the hosts and organizers, but to also be surrounded
+                  by the talent of the other participants is definitely eye
+                  opening. I have seen some incredible things come to life in
+                  just 2-3 days.
                 </p>
               </div>
             </div>
@@ -263,11 +257,14 @@ export default function Page() {
                   I Love To Compete
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                My enthusiasm for innovation and problem-solving motivates me to participate in pitch and case competitions,
-                 where I can collaborate with diverse teams to tackle complex challenges. To date, I have taken part in {DATA.competitions.length} pitch 
-                 and case competitions, and I am eager to continue my journey in this arena. These competitions provide invaluable opportunities
-                 to refine my presentation skills and think critically under pressure. 
-                 
+                  My enthusiasm for innovation and problem-solving motivates me
+                  to participate in pitch and case competitions, where I can
+                  collaborate with diverse teams to tackle complex challenges.
+                  To date, I have taken part in {DATA.competitions.length} pitch
+                  and case competitions, and I am eager to continue my journey
+                  in this arena. These competitions provide invaluable
+                  opportunities to refine my presentation skills and think
+                  critically under pressure.
                 </p>
               </div>
             </div>
@@ -294,7 +291,6 @@ export default function Page() {
         </div>
       </section>
 
-
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
@@ -313,9 +309,6 @@ export default function Page() {
                 >
                   with a direct question on LinkedIn
                 </Link>{" "}
-
-                
-
                 {/* <Link
                   href={DATA.contact.social.email.url}
                   className="text-blue-500 hover:underline"
@@ -323,7 +316,6 @@ export default function Page() {
                    send me an email 
                 </Link>{" "} */}
               </p>
-
             </div>
           </BlurFade>
         </div>

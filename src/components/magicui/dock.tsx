@@ -68,7 +68,6 @@ export interface DockIconProps {
   mouseX?: any;
   className?: string;
   children?: React.ReactNode;
-  props?: PropsWithChildren;
 }
 
 const DockIcon = ({
@@ -78,7 +77,6 @@ const DockIcon = ({
   mouseX,
   className,
   children,
-  ...props
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -107,7 +105,6 @@ const DockIcon = ({
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
         className
       )}
-      {...props}
     >
       {children}
     </motion.div>

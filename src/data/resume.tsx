@@ -11,61 +11,67 @@ export const DATA = {
   description:
     "I'm a Software Developer with a keen interest in the power of AI and it's various applications. I believe AI is the future and I want to be a pioneer in this field",
   summary:
-  "I began my studies in 2023 at [Carleton University with a degree in Computer Science and a specialization in AI/ML](/#education). [I have a knack for entrepreneurship and hackathons and regulary participate in them](/#hackathons). I'm also very active on campus and I am apart of various clubs such as [Carleton Paksitan Student Association, Hack the Hill and many more](/#clubs).",
-  
+    "I began my studies in 2023 at [Carleton University with a degree in Computer Science and a specialization in AI/ML](/#education). Currently maintaining a CGPA of 3.95/4.00 with a minor in Statistics. [I have a knack for entrepreneurship and hackathons and regularly participate in them](/#hackathons). I'm also very active on campus and I am apart of various clubs such as [cuHacking, Hack the Hill and many more](/#clubs).",
+
   avatarUrl: "/me.HEIC",
 
   skills: [
-    "React.js",
     "Typescript",
-    "Node.js",
-    "Python",
+    "Javascript",
+    "Golang",
     "Java",
-    "TailwindCSS",
-    "Next.js",
-    "Firebase",
+    "Python",
+    "Ruby",
+    "SQL",
     "C",
     "C++",
-    "OpenAI",
-    "Astro",
-    "Spring Boot",
-    "PostgreSQL",
+    "React.js",
+    "Node.js",
+    "Next.js",
+    "TailwindCSS",
+    "Firebase",
+    "Supabase",
     "AWS",
-   
-
-
-    
+    "Ruby on Rails",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "Github",
+    "Gitlab",
+    "Jenkins",
+    "Jira",
+    "QNX",
+    "Linux",
+    "Vim",
+    "Stripe",
+    "OpenAI",
+    "Grafana",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
     { href: "#", icon: CodeIcon, label: "Projects" },
-    // { href: "#", icon: PencilLine, label: "Notes" },
   ],
   contact: {
-    email: "rayhaan2004@hotmail.com",
+    email: "rayhaanfarooq@outlook.com",
     telephone: "705-970-7294",
     social: {
       GitHub: {
         name: "GitHub",
         url: "https://github.com/rayhaanfarooq",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/rayhaanfarooq/",
         icon: Icons.linkedin,
-
         navbar: true,
       },
-
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:rayhaanfarooq@outlook.com",
         icon: Icons.email,
-
         navbar: false,
       },
     },
@@ -73,248 +79,155 @@ export const DATA = {
 
   work: [
     {
-      company: "Carleton University Teaching Assistant",
-      href: "https://carleton.ca",
+      company: "Shopify",
+      href: "https://shopify.com",
       badges: [],
-      location: "In-Person",
-      title: "Teaching Assistant",
-      logoUrl: "/carleton.PNG",
-      start: "September 2024",
-      end: "December 2024",
+      location: "Ottawa, ON",
+      title: "Software Engineer Intern",
+      logoUrl: "/shopify.png",
+      start: "September 2025",
+      end: "December 2025",
       description:
-        "Working as a TA for the course COMP1406(Introduction to Computer Science II). I hold office hours, grade assignments and help students with their code",
+        "Incoming Software Engineer Intern at Shopify for Fall 2025.",
     },
     {
-      company: "Hack the Hill",
-      href: "https://2024.hackthehill.com",
+      company: "Ross Video",
+      href: "https://rossvideo.com",
       badges: [],
-      location: "Remote",
-      title: "Development Coordinator",
-      logoUrl: "/hackthehill.jpg",
-      start: "October 2023",
-      end: "December 2023",
+      location: "Ottawa, ON",
+      title: "Software Developer Intern: Internal AI Tools",
+      logoUrl: "/ross.png",
+      start: "May 2025",
+      end: "August 2025",
       description:
-        "Worked on the homepage of the main Hack the Hill website and implemented parallax scrolling.",
+        "Developed a full-stack RAG-powered AI chatbot using React + Vite, Express.js, and PostgreSQL, fully containerized with Docker deployed on a custom configured virtual machine. Developed an automated AI RAG Pipeline using Python, transforming various documents and files into clean text, triggered via Jenkins and uploaded to AWS S3 to be ingested into a vector database. Partnered with internal teams to launch the chatbot across departments, enhancing access to engineering knowledge for 20+ employees and reducing technical support overhead contributing to onboarding time savings of up to 50%.",
+    },
+    {
+      company: "Carleton University",
+      href: "https://carleton.ca",
+      badges: [],
+      location: "Ottawa, ON",
+      title: "Teaching Assistant: Abstract Data Structures & Algorithms",
+      logoUrl: "/carleton.PNG",
+      start: "January 2025",
+      end: "April 2025",
+      description:
+        "Led weekly tutorials and held regular office hours for 200+ students, resulting in a measurable 20% improvement in average course exam scores through hands-on concept reinforcement. Provided targeted mentorship in algorithms and problem-solving strategies, helping over 200 students improve assignment performance by up to 25% through structured walkthroughs and feedback. Assisted students with advanced Java debugging techniques, code structure improvements, and runtime optimization, leading to a 30% increase in code execution efficiency and project quality.",
     },
   ],
   education: [
     {
       school: "Carleton University",
       href: "https://carleton.ca",
-      degree: "Honours Bachelor's Degree of Computer Science(AI/ML)",
+      degree:
+        "Honours Bachelor's Degree of Computer Science (AI/ML) | Minor: Statistics | CGPA: 3.95/4.00 | Co-op",
       logoUrl: "/carleton.PNG",
       start: "2023",
-      end: "2027",
+      end: "2028",
     },
   ],
   projects: [
-
     {
-      title: "Carleton Explorer",
+      title: "RavenHaven",
       href: "",
-      dates: "October 2024 - Present",
+      dates: "March 2025 - Present",
       active: true,
       description:
-      "Making a simple app for current and future students to have a central app for all events that are happening on campus",
-       
+        "Architected a campus event discovery app using React.JS and Tailwind CSS for clubs at Carleton University. Implemented backend APIs with Ruby on Rails and PostgreSQL for event data management and event updates. Hosted the application on AWS, using EC2 for scalable hosting and RDS for managed database services.",
       technologies: [
-        "Asto",
-        "React.js",
+        "React.JS",
+        "Tailwind CSS",
+        "Ruby on Rails",
         "PostgreSQL",
-        "Tailwind CSS",
-        "Shadcn UI",
+        "Docker",
         "AWS",
-        "Spring Boot",
       ],
       links: [
         {
-          
           type: "Coming Soon",
           href: "",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/carletonexplorer.png",
-      video: ""
-       
+      image: "/ravenhaven.png",
+      video: "",
     },
     {
-      title: "OpenGround",
+      title: "Herb",
       href: "",
-      dates: "August 2024 - Present",
+      dates: "January 2025",
       active: true,
       description:
-      "The premium versions of AI are currently unaccesible. I wish to change that. Will provide more info when finished.",
-       
-      technologies: [
-        "Next.js",
-        "React.js",
-        "Firebase",
-        "Tailwind CSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-        "Vercel AI SDK",
-      ],
+        "Captained a 4-person team to 3rd at uOttaHack7, developing Herb, an innovative disaster response solution. Engineered a remote controlled rover by integrating QNX with Raspberry Pi hardware architecture. Implemented motion control algorithms in Python, enabling navigation and movement using remote control.",
+      technologies: ["Python", "QNX", "Bash", "Vim", "Raspberry Pi"],
       links: [
         {
-          
           type: "Coming Soon",
           href: "",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/openground.png",
-      video: ""
-       
+      image: "/herb.png",
+      video: "",
     },
-
     {
       title: "Flash.AI",
-      href: "",
-      dates: "August 2024 - Present",
+      href: "https://flashaii.netlify.app",
+      dates: "September 2024 - December 2024",
       active: true,
       description:
-      "Developed and deployed an AI powered flashcard generator that uses the OpenAI API to generate flashcards for students to use. For now, I've made the product free",
-       
+        "Developed an AI flashcard generator that is open source using the Open AI API resulting in 10+ users. Designed the front-end using React.JS and Tailwind CSS for scalability and simplicity. Constructed a back-end stack utilizing Firebase and Javascript with Stripe as the payment provider.",
       technologies: [
-        "Next.js",
-        "React.js",
-        "Firebase",
+        "React.JS",
         "Tailwind CSS",
-        "Open AI",
+        "Firebase",
+        "Next.JS",
+        "Open AI API",
+        "Stripe API",
       ],
-
       links: [
         {
-          
           type: "Website",
           href: "https://flashaii.netlify.app",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "/flashcards.png",
-      video: ""
-       
-    },
-
-    {
-      title: "DermAI",
-      href: "",
-      dates: "August 2024 - Present",
-      active: true,
-      description:
-      "Worked in a team of 4 to develop a chatbot using the OpenAI API. Tailored the chatbot to be a AI dermatologist to be able to handle any inquries regarding the skin. Being an advent user of skincare the confusing ingredients always bothered me, so I decided to develop a chatbot specifically for skincare",
-      
-       
-      technologies: [
-        "Next.js",
-        "React.js",
-        "Firebase",
-        "Tailwind CSS",
-        "Open AI",
-
-       
-      ],
-      links: [
-        {
-          
-          type: "Website",
-          href: "https://derm-ai-kappa.vercel.app",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/dermai.png",
-      video: ""
-       
-    },
-
-   
-
-  
-    {
-      title: "Pantry Tracker",
-      href: "",
-      dates: "August 2024 - Present",
-      active: true,
-      description:
-      "A simple pantry tracker from which you can add and remove items. I developed this project to learn more about Firebase and how to use it in a project",
-       
-      technologies: [
-        "Next.js",
-        "React.js",
-        "Firebase",
-        "Tailwind CSS",
-      ],
-
-      links: [
-        {
-          type: "Website",
-          href: "",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/pantrytracker.png",
-      video: ""
-       
+      video: "",
     },
   ],
 
   clubs: [
     {
-      name: "Carleton Pakistan Student Association",
-      position: "Member",
-      href: "https://www.instagram.com/cpsa.carleton/",
-      logoUrl: "/psa.JPG",
-      start: "2023",
+      name: "cuHacking",
+      position: "Sponsorship Coordinator",
+      href: "https://cuhacking.com",
+      logoUrl: "/cuhacking.png",
+      start: "November 2024",
       end: "Present",
       description:
-        "I am a member of the Carleton Pakistan Student Association. We host events and socials for students to come together and celebrate Pakistani culture",
+        "Managed sponsorship team communication and task tracking through Notion, resulting in 40% faster response times. Established partnerships with companies securing $20,000+ in funding and growing membership visibility by 3x. Presented 5+ compelling sponsorship proposals, highlighting mutual benefits to attract and onboard 8+ partners.",
     },
     {
       name: "Hack the Hill",
-      position: "Sponsorship & Development Coordinator",
+      position: "Sponsorship Coordinator and Software Developer",
       href: "https://2024.hackthehill.com",
       logoUrl: "/hackthehill.jpg",
-      start: "2023",
-      end: "Present",
+      start: "November 2023",
+      end: "November 2024",
       description:
-        "I am responsible for reaching out to sponsors and developing Hack the Hill technology",
+        "Spearheaded sponsorship initiatives with Open Project, securing key partnerships and $90,000+ in funding. Aided in the development of key features using JavaScript, HTML, and CSS, improving user engagement by 30%. Initiated cold outreach to 50+ potential sponsors, securing 5+ new partnerships for Hack the Hill II.",
     },
-    {
-      name: "Carleton Muslim Student Association",
-      position: "Admin Member",
-      href: "https://cumsa.ca",
-      logoUrl: "/msa.PNG",
-      start: "2023",
-      end: "Present",
-      description:
-        "I am an admin member of the Carleton Muslim Student Association. We host events and socials for students to come together and celebrate Islam. I work on the website and also spread the word of any future events",
-    },
-
-    {
-      name: "Carleton Computer Science Society",
-      position: "Member",
-      href: "https://ccss.carleton.ca",
-      logoUrl: "/css.JPG",
-      start: "2023",
-      end: "Present",
-      description:
-        "I'm a general member of the Carleton CSS. I attend events and help spread the word of upcoming events",
-    }
-
   ],
 
   hackathons: [
-
     {
-      title: "Discover Technata Hacks",
-      dates: "October, 2024",
+      title: "uOttaHack 7",
+      dates: "January 2025",
       location: "Ottawa, Ontario",
       description:
-        "Participated in the 2024 hosting of Discover Technata Hacks",
-      image:
-        "discover2023.JPG",
+        "Won 3rd place with Herb, an innovative disaster response solution using QNX and Raspberry Pi.",
+      image: "uottahack.png",
       links: [
         {
           title: "Source",
@@ -323,15 +236,28 @@ export const DATA = {
         },
       ],
     },
-
     {
       title: "Discover Technata Hacks",
-      dates: "October, 2023",
+      dates: "October 2024",
+      location: "Ottawa, Ontario",
+      description:
+        "Participated in the 2024 hosting of Discover Technata Hacks",
+      image: "discover2023.JPG",
+      links: [
+        {
+          title: "Source",
+          icon: <FaRegNewspaper className="h-4 w-4" />,
+          href: "",
+        },
+      ],
+    },
+    {
+      title: "Discover Technata Hacks",
+      dates: "October 2023",
       location: "Ottawa, Ontario",
       description:
         "Developed MonsTerra, an app to reimburse consumers and companies for purchasing environmentally friendly products",
-      image:
-        "discover2023.JPG",
+      image: "discover2023.JPG",
       links: [
         {
           title: "Source",
@@ -342,16 +268,14 @@ export const DATA = {
     },
   ],
 
-  competitions : [
-
+  competitions: [
     {
       title: "IEEE SPAC Pitch Competition",
-      dates: "November, 2024",
+      dates: "November 2024",
       location: "Ottawa, Ontario",
       description:
         "Participated in the IEEE SPAC Pitch Competition where I pitched Jodi, a plug and play rebate system for businesses",
-      image:
-        "ieee.png",
+      image: "ieee.png",
       links: [
         {
           title: "Source",
@@ -360,15 +284,13 @@ export const DATA = {
         },
       ],
     },
-
     {
       title: "ENGCOMM x MONTREAL",
-      dates: "October, 2024",
-      location: "Montreal, Ontario",
+      dates: "October 2024",
+      location: "Montreal, Quebec",
       description:
         "Participated in ENGCOMM x MONTREAL where my team and I participated in a case competition",
-      image:
-        "engcomm.png",
+      image: "engcomm.png",
       links: [
         {
           title: "Source",
@@ -377,20 +299,14 @@ export const DATA = {
         },
       ],
     },
-
-
     {
       title: "DreamLaunch Hackathon",
       dates: "November 2023",
       location: "Ottawa, Ontario",
       description:
-        "Further built out MonsTerra",
-      image:
-        "/dreamlaunch.JPG",
-      links: [
-       
-      ],
+        "Further built out MonsTerra, an app to reimburse consumers and companies for purchasing environmentally friendly products",
+      image: "dreamlaunch.JPG",
+      links: [],
     },
-
-  ]
+  ],
 } as const;
