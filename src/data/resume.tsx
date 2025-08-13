@@ -8,12 +8,23 @@ export const DATA = {
   url: "https://rayhaanfarooq.netlify.app",
   location: "Ottawa, CA",
   locationLink: "https://www.google.com/maps/place/ottawa",
-  description:
-    "I'm a Software Developer with a keen interest in the power of AI and it's various applications. I believe AI is the future and I want to be a pioneer in this field",
-  summary:
-    "I began my studies in 2023 at [Carleton University with a degree in Computer Science and a specialization in AI/ML](/#education). Currently maintaining a CGPA of 3.95/4.00 with a minor in Statistics. [I have a knack for entrepreneurship and hackathons and regularly participate in them](/#hackathons). I'm also very active on campus and I am apart of various clubs such as [cuHacking, Hack the Hill and many more](/#clubs).",
+  description: `Hi there! I'm Rayhaan, a Software Engineer who loves the outdoors as much as I 
+    love building. If you're looking for a Software Engineer who ACTUALLY ships features, 
+    I'm your guy! I've worked at various companies such as Shopify and Ross Video 
+    and I'm currently honing my skills of software development.`,
+  summary: `I began my studies in 2023 at [Carleton University with a degree in Computer Science and a specialization in AI/ML](/#education). 
+    Currently maintaining a CGPA of 3.95/4.00 with a minor in Statistics. 
+    [I have a knack for entrepreneurship and hackathons and regularly participate in them](/#hackathons). 
+    I'm also very active on campus and I am apart of various clubs 
+    such as [cuHacking, Hack the Hill and many more](/#clubs).
+     One of my favorite hobbies is to go on hikes and explore the outdoors. I have extensive
+     experience in many frontend technologies such as React.js, TailwindCSS, and Next.js. I'm also
+     very comfortable with backend technologies such as Ruby on Rails, Node.js, and Golang. Im currently looking
+     to expand my knowledge in infrastructure technologies such as AWS, Docker, and Kubernetes and 
+     AI/ML technologies such as Pytorch, Tensorflow, and OpenAI. I'm also always open to new business
+     opportunities and potential startup ideas especially in the AI/ML space.`,
 
-  avatarUrl: "/me.HEIC",
+  avatarUrl: "/hero.jpg",
 
   skills: [
     "Typescript",
@@ -96,7 +107,7 @@ export const DATA = {
       badges: [],
       location: "Ottawa, ON",
       title: "Software Developer Intern: Internal AI Tools",
-      logoUrl: "/ross.png",
+      logoUrl: "/ross.png.webp",
       start: "May 2025",
       end: "August 2025",
       description:
@@ -162,12 +173,12 @@ export const DATA = {
       technologies: ["Python", "QNX", "Bash", "Vim", "Raspberry Pi"],
       links: [
         {
-          type: "Coming Soon",
-          href: "",
+          type: "Github",
+          href: "https://github.com/Ariz-Kazani/uOttaHack7",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/herb.png",
+      image: "/herb.jpg",
       video: "",
     },
     {
@@ -195,6 +206,31 @@ export const DATA = {
       image: "/flashcards.png",
       video: "",
     },
+    {
+      title: "DermAI",
+      href: "https://dermai.netlify.app",
+      dates: "January 2025 - Present",
+      active: true,
+      description:
+        "Developed a full-stack AI-powered dermatology diagnosis tool using React.JS and Tailwind CSS for scalability and simplicity. Constructed a back-end stack utilizing Firebase and Javascript with Stripe as the payment provider.",
+      technologies: [
+        "React.JS",
+        "Tailwind CSS",
+        "Firebase",
+        "Next.JS",
+        "Open AI API",
+        "Stripe API",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://dermai.netlify.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/dermai.png",
+      video: "",
+    },
   ],
 
   clubs: [
@@ -207,6 +243,26 @@ export const DATA = {
       end: "Present",
       description:
         "Managed sponsorship team communication and task tracking through Notion, resulting in 40% faster response times. Established partnerships with companies securing $20,000+ in funding and growing membership visibility by 3x. Presented 5+ compelling sponsorship proposals, highlighting mutual benefits to attract and onboard 8+ partners.",
+    },
+    {
+      name: "Carleton Computer Science Society",
+      position: "Software Developer",
+      href: "https://carleton.ca/csclub/",
+      logoUrl: "/css.jpg",
+      start: "September 2024",
+      end: "Present",
+      description:
+        "Helped organize and host events for the Carleton Computer Science Society",
+    },
+    {
+      name: "IEEE SPAC",
+      position: "Volunteer",
+      href: "https://ieee.ca/spac",
+      logoUrl: "/ieee.webp",
+      start: "October 2024",
+      end: "October 2024",
+      description:
+        "Helped organize and host the flagship event known as IEEE SPAC",
     },
     {
       name: "Hack the Hill",
@@ -227,7 +283,7 @@ export const DATA = {
       location: "Ottawa, Ontario",
       description:
         "Won 3rd place with Herb, an innovative disaster response solution using QNX and Raspberry Pi.",
-      image: "uottahack.png",
+      image: "/uottahack7.png",
       links: [
         {
           title: "Source",
@@ -275,7 +331,7 @@ export const DATA = {
       location: "Ottawa, Ontario",
       description:
         "Participated in the IEEE SPAC Pitch Competition where I pitched Jodi, a plug and play rebate system for businesses",
-      image: "ieee.png",
+      image: "/ieee.webp",
       links: [
         {
           title: "Source",
