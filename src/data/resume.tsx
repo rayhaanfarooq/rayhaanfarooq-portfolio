@@ -134,7 +134,7 @@ export const DATA = {
         "Honours Bachelor's Degree of Computer Science (AI/ML) | Minor: Statistics | CGPA: 3.95/4.00 | Co-op",
       logoUrl: "/carleton.PNG",
       start: "2023",
-      end: "2028",
+      end: "2027",
     },
   ],
   projects: [
