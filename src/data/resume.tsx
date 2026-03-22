@@ -8,21 +8,10 @@ export const DATA = {
   url: "https://rayhaanfarooq.netlify.app",
   location: "Ottawa, CA",
   locationLink: "https://www.google.com/maps/place/ottawa",
-  description: `Hi there! I'm Rayhaan, a Software Engineer who loves the outdoors as much as I 
-    love building. If you're looking for a Software Engineer who ACTUALLY ships features, 
-    I'm your guy! I've worked at various companies such as Shopify and Ross Video 
-    and I'm currently honing my skills of software development.`,
-  summary: `I began my studies in 2023 at [Carleton University with a degree in Computer Science and a specialization in AI/ML](/#education). 
-    Currently maintaining a CGPA of 3.95/4.00 with a minor in Statistics. 
-    [I have a knack for entrepreneurship and hackathons and regularly participate in them](/#hackathons). 
-    I'm also very active on campus and I am apart of various clubs 
-    such as [cuHacking, Hack the Hill and many more](/#clubs).
-     One of my favorite hobbies is to go on hikes and explore the outdoors. I have extensive
-     experience in many frontend technologies such as React.js, TailwindCSS, and Next.js. I'm also
-     very comfortable with backend technologies such as Ruby on Rails, Node.js, and Golang. Im currently looking
-     to expand my knowledge in infrastructure technologies such as AWS, Docker, and Kubernetes and 
-     AI/ML technologies such as Pytorch, Tensorflow, and OpenAI. I'm also always open to new business
-     opportunities and potential startup ideas especially in the AI/ML space.`,
+  description:
+    "Software Engineer passionate about building elegant digital experiences. I've shipped production code at companies like Shopify and Ross Video — always focused on craft, performance, and user impact.",
+  summary:
+    "I'm pursuing a Computer Science degree (AI/ML specialization) at Carleton University with a minor in Statistics, maintaining a 3.95 CGPA. My technical range spans frontend frameworks like React, Next.js, and TailwindCSS to backend systems with Ruby on Rails, Node.js, and Golang. I'm actively expanding into cloud infrastructure, AI/ML technologies, and entrepreneurship. When I'm not coding, you'll find me on hiking trails exploring the outdoors.",
 
   avatarUrl: "/hero.jpg",
 
@@ -36,27 +25,28 @@ export const DATA = {
     "SQL",
     "C",
     "C++",
+    "Rust",
+    "HTML",
+    "CSS",
     "React.js",
     "Node.js",
     "Next.js",
     "TailwindCSS",
     "Firebase",
     "Supabase",
-    "AWS",
     "Ruby on Rails",
     "PostgreSQL",
+    "MongoDB",
     "Docker",
     "Git",
-    "Github",
-    "Gitlab",
     "Jenkins",
-    "Jira",
     "QNX",
     "Linux",
-    "Vim",
     "Stripe",
     "OpenAI",
     "Grafana",
+    "GCP",
+    "AWS",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -90,28 +80,52 @@ export const DATA = {
 
   work: [
     {
+      company: "Fullscript",
+      href: "https://fullscript.com",
+      badges: [],
+      location: "Toronto, ON",
+      title: "Software Engineer Intern: Search Engine",
+      logoUrl: "/fullscript.png",
+      start: "May 2026",
+      end: "August 2026",
+      description:
+        "Incoming Software Engineer Intern on the Search Engine team.",
+    },
+    {
+      company: "Carleton University",
+      href: "https://carleton.ca",
+      badges: [],
+      location: "Ottawa, ON",
+      title: "Teaching Assistant",
+      logoUrl: "/carleton.PNG",
+      start: "January 2026",
+      end: "May 2026",
+      description:
+        "Teaching Assistant at Carleton University.",
+    },
+    {
       company: "Shopify",
       href: "https://shopify.com",
       badges: [],
-      location: "Ottawa, ON",
-      title: "Software Engineer Intern",
+      location: "Toronto, ON",
+      title: "Software Engineer Intern: Matching Engine",
       logoUrl: "/shopify.png",
       start: "September 2025",
       end: "December 2025",
       description:
-        "Incoming Software Engineer Intern at Shopify for Fall 2025.",
+        "Reduced administrative workload by 10× by building a full-stack Rails platform that replaced 15+ Excel spreadsheets with automated workflows, dashboards, and centralized data, supporting 300+ interns and 40+ Early Careers staff. Improved data accessibility and analytics by designing ERDs, prototyping intuitive interfaces in Figma, and integrating BigQuery to centralize 2,000+ intern records, enabling insights for 75+ managers and 200+ mentors. Accelerated intern-to-team allocations by implementing a Gale–Shapley–based matching engine that automated 80% of assignments, reducing manual allocation time from 4 weeks to under 10 minutes.",
     },
     {
       company: "Ross Video",
       href: "https://rossvideo.com",
       badges: [],
-      location: "Ottawa, ON",
-      title: "Software Developer Intern: Internal AI Tools",
+      location: "Toronto, ON",
+      title: "Software Engineer Intern: AI Tools",
       logoUrl: "/ross.png.webp",
       start: "May 2025",
       end: "August 2025",
       description:
-        "Developed a full-stack RAG-powered AI chatbot using React + Vite, Express.js, and PostgreSQL, fully containerized with Docker deployed on a custom configured virtual machine. Developed an automated AI RAG Pipeline using Python, transforming various documents and files into clean text, triggered via Jenkins and uploaded to AWS S3 to be ingested into a vector database. Partnered with internal teams to launch the chatbot across departments, enhancing access to engineering knowledge for 20+ employees and reducing technical support overhead contributing to onboarding time savings of up to 50%.",
+        "Reduced deployment and environment setup time by over 80% by shipping a full-stack RAG AI chatbot using React + TypeScript, Express.js, and PostgreSQL, containerized with Docker and deployed on a custom VM. Reduced manual document processing by over 90% by building an automated RAG AI pipeline in Python with Jenkins, uploading hundreds of document embeddings to AWS S3 for vector DB ingestion. Enhanced access to internal engineering knowledge for 20+ employees by partnering with cross-functional teams to roll out the chatbot across departments, reducing support overhead and cutting onboarding time by up to 50%.",
     },
     {
       company: "Carleton University",
@@ -123,7 +137,7 @@ export const DATA = {
       start: "January 2025",
       end: "April 2025",
       description:
-        "Led weekly tutorials and held regular office hours for 200+ students, resulting in a measurable 20% improvement in average course exam scores through hands-on concept reinforcement. Provided targeted mentorship in algorithms and problem-solving strategies, helping over 200 students improve assignment performance by up to 25% through structured walkthroughs and feedback. Assisted students with advanced Java debugging techniques, code structure improvements, and runtime optimization, leading to a 30% increase in code execution efficiency and project quality.",
+        "Led weekly tutorials and held regular office hours for 200+ students, reinforcing core OOP and Java concepts, reviewing assignments, and providing targeted practice, resulting in a 20% increase in average exam scores. Provided one-on-one mentorship in Java and algorithmic problem-solving, offering structured guidance, code review, and problem breakdowns, helping students improve assignment performance by up to 25%. Created and curated practice problems focused on data structures, algorithms, and OOP design patterns, designing exercises that strengthened coding proficiency and prepared students for technical interviews.",
     },
   ],
   education: [
@@ -138,6 +152,53 @@ export const DATA = {
     },
   ],
   projects: [
+    {
+      title: "Forge",
+      href: "",
+      dates: "January 2026",
+      active: true,
+      description:
+        "Accelerated development cycles by 50% and cut bugs via AI-powered test generation in Python. Implemented AST-based incremental tests for untested functions cutting AI token costs by 60-80%. Built a React + TypeScript dashboard with SQLite tracking, providing fast feedback and clear repository insights.",
+      technologies: [
+        "Python",
+        "OpenAI API",
+        "React.JS",
+        "TypeScript",
+        "SQLite",
+        "AWS",
+      ],
+      links: [
+        {
+          type: "Coming Soon",
+          href: "",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Jobber",
+      href: "",
+      dates: "November 2025",
+      active: true,
+      description:
+        "Built a real-time job alert system detecting new postings in seconds, driving rapid applications and more interviews. Implemented a serverless JavaScript backend on Cloudflare Workers, achieving 99.9% uptime. Integrated the Discord API to deliver instant alerts, growing a 100+ member community.",
+      technologies: [
+        "Golang",
+        "Cloudflare Workers",
+        "Discord API",
+      ],
+      links: [
+        {
+          type: "Coming Soon",
+          href: "",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
     {
       title: "RavenHaven",
       href: "",
@@ -242,7 +303,7 @@ export const DATA = {
       start: "November 2024",
       end: "Present",
       description:
-        "Managed sponsorship team communication and task tracking through Notion, resulting in 40% faster response times. Established partnerships with companies securing $20,000+ in funding and growing membership visibility by 3x. Presented 5+ compelling sponsorship proposals, highlighting mutual benefits to attract and onboard 8+ partners.",
+        "Raised over $110,000 by crafting tailored proposals and managing long-term partner relationships. Organized two hackathons with a combined 1400+ attendees, ensuring sponsor satisfaction and seamless execution. Optimized workflows in Notion and led outreach to 50+ companies, reducing response times by 40%.",
     },
     {
       name: "Carleton Computer Science Society",
