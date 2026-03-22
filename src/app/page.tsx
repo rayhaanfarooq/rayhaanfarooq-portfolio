@@ -291,8 +291,7 @@ export default function Page() {
                     {category.items.map((skill) => (
                       <Badge
                         key={skill}
-                        variant="outline"
-                        className="px-4 py-2 text-sm font-medium cursor-default hover:bg-accent hover:scale-[1.03] transition-all duration-200"
+                        className="px-4 py-2 text-sm font-medium cursor-default bg-foreground text-background border-transparent hover:bg-foreground/85 hover:scale-[1.03] transition-all duration-200 shadow-sm"
                       >
                         {skill}
                       </Badge>
