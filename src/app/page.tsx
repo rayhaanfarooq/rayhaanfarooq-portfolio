@@ -393,15 +393,15 @@ export default function Page() {
 
                     <div className="absolute bottom-4 left-4 right-4 glass-panel p-5 text-white dark:bg-[rgba(8,14,24,0.52)]">
                       <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/70">
-                        Next up
+                        Currently
                       </p>
                       <p className="mt-2 text-lg font-semibold leading-snug">
                         Fullscript, Search Engine team.
                       </p>
                       <p className="mt-3 text-sm leading-relaxed text-white/75">
-                        Incoming software engineer intern, continuing to work on
-                        systems, tooling, and product work with real users
-                        behind it.
+                        Currently contributing to the Search Team at Fullscript.
+                        Working on both the Search Engine and the tooling for
+                        it.
                       </p>
                     </div>
                   </div>
