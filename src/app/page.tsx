@@ -11,11 +11,10 @@ import {
   ArrowDownIcon,
   ArrowUpRightIcon,
   BriefcaseIcon,
-  Code2Icon,
   GraduationCapIcon,
   MailIcon,
   MoveRightIcon,
-  RocketIcon,
+  SearchIcon,
   SparklesIcon,
   TrophyIcon,
   type LucideIcon,
@@ -108,22 +107,35 @@ const heroStats = [
 
 const highlightCards = [
   {
-    icon: Code2Icon,
-    title: "Full-stack ownership",
+    icon: SearchIcon,
+    title: "Interests",
     description:
-      "I'm comfortable moving between frontend, backend, data, and infra to get a product over the line.",
+      "I'm especially interested in learning more about search and recommendation systems, from ranking and retrieval to personalization at scale.",
+    highlighted: true,
   },
   {
-    icon: RocketIcon,
-    title: "Workflow automation",
+    icon: TrophyIcon,
+    title: "$100k+ raised",
     description:
-      "A lot of my best work has been replacing repetitive manual work with software people actually trust.",
+      "Raised across cuHacking and Hack the Hill through sponsorship and partner outreach.",
+  },
+  {
+    icon: BriefcaseIcon,
+    title: "3x Software Engineer Intern",
+    description:
+      "Experience across Fullscript, Shopify, and Ross Video working on product and internal tooling.",
+  },
+  {
+    icon: GraduationCapIcon,
+    title: "3.95 CGPA",
+    description:
+      "Computer Science (AI/ML) at Carleton University with a minor in Statistics.",
   },
   {
     icon: SparklesIcon,
-    title: "AI with a real use case",
+    title: "Hobbies",
     description:
-      "I'm most interested in AI when it saves time for real teams, not when it just looks flashy in a demo.",
+      "Outside of code, I'm into the gym, hiking and being outdoors, skincare, perfumes, and tasting different kinds of honey.",
   },
 ];
 
@@ -203,15 +215,34 @@ function HighlightCard({
   icon: Icon,
   title,
   description,
+  highlighted = false,
 }: {
   icon: LucideIcon;
   title: string;
   description: string;
+  highlighted?: boolean;
 }) {
   return (
-    <div className="section-shell p-6">
+    <div
+      className={cn(
+        "section-shell p-6",
+        highlighted &&
+          "border-[#cf6a34]/25 bg-[linear-gradient(135deg,rgba(210,117,62,0.12),rgba(255,255,255,0.82))] shadow-[0_24px_80px_-40px_rgba(207,106,52,0.4)] dark:bg-[linear-gradient(135deg,rgba(210,117,62,0.18),rgba(255,255,255,0.05))]",
+      )}
+    >
+      {highlighted ? (
+        <span className="mb-4 inline-flex rounded-full border border-[#cf6a34]/20 bg-white/70 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-[#b85c2d] dark:bg-white/[0.06] dark:text-[#ffcf9b]">
+          Currently exploring
+        </span>
+      ) : null}
       <div className="flex items-center gap-3">
-        <div className="flex size-11 items-center justify-center rounded-2xl bg-[rgba(223,117,56,0.12)] text-[#cf6a34] dark:bg-[rgba(255,183,123,0.12)] dark:text-[#ffcf9b]">
+        <div
+          className={cn(
+            "flex size-11 items-center justify-center rounded-2xl bg-[rgba(223,117,56,0.12)] text-[#cf6a34] dark:bg-[rgba(255,183,123,0.12)] dark:text-[#ffcf9b]",
+            highlighted &&
+              "bg-[#cf6a34] text-white dark:bg-[#ffcf9b] dark:text-slate-900",
+          )}
+        >
           <Icon className="size-5" />
         </div>
         <h3 className="text-lg font-semibold">{title}</h3>
@@ -402,7 +433,10 @@ export default function Page() {
                   Most of my experience so far has been in full-stack product
                   work, internal tools, and AI systems. I like figuring out the
                   bottleneck, cleaning up the workflow, and shipping something
-                  people want to keep using.
+                  people want to keep using. I also think one of my biggest
+                  strengths is working well with people, whether that means
+                  collaborating across teams, building relationships, or helping
+                  others feel comfortable working through hard problems.
                 </p>
               </div>
 
@@ -411,6 +445,7 @@ export default function Page() {
                   "Full-stack product work",
                   "Internal tools",
                   "AI systems",
+                  "People skills",
                   "Performance",
                   "Systems thinking",
                 ].map((item) => (
@@ -435,27 +470,6 @@ export default function Page() {
                 <HighlightCard {...card} />
               </BlurFade>
             ))}
-
-            <BlurFade delay={BLUR_FADE_DELAY * 5} inView>
-              <div className="section-shell p-6">
-                <div className="flex items-center gap-3">
-                  <div className="flex size-11 items-center justify-center rounded-2xl bg-[rgba(15,138,122,0.12)] text-[#0f8a7a] dark:bg-[rgba(123,231,216,0.12)] dark:text-[#9fe4da]">
-                    <GraduationCapIcon className="size-5" />
-                  </div>
-                  <div>
-                    <p className="text-lg font-semibold">Education</p>
-                    <p className="text-sm text-muted-foreground">
-                      Carleton University, 2023 to 2027
-                    </p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
-                  Honours Computer Science with an AI/ML specialization, minor
-                  in Statistics, and a strong academic track record alongside
-                  internships, teaching, and community work.
-                </p>
-              </div>
-            </BlurFade>
           </div>
         </div>
       </section>
