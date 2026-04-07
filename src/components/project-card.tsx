@@ -1,7 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { ArrowUpRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 interface Props {
   title: string;
@@ -13,7 +15,7 @@ interface Props {
   image?: string;
   video?: string;
   links?: readonly {
-    icon: React.ReactNode;
+    icon: ReactNode;
     type: string;
     href: string;
   }[];
@@ -26,85 +28,132 @@ export function ProjectCard({
   description,
   dates,
   tags,
-  link,
   image,
   video,
   links,
   className,
 }: Props) {
+  const hasPrimaryLink = Boolean(href?.trim());
+  const primaryIsExternal = href?.startsWith("http");
+
+  const media = video ? (
+    <video
+      src={video}
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="h-60 w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+    />
+  ) : image ? (
+    <Image
+      src={image}
+      alt={title}
+      width={900}
+      height={620}
+      className="h-60 w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+    />
+  ) : (
+    <div className="relative h-60 overflow-hidden bg-[linear-gradient(145deg,rgba(18,38,63,0.98),rgba(11,20,38,0.9))]">
+      <div className="absolute -right-8 top-0 h-36 w-36 rounded-full bg-[#f29c64]/30 blur-3xl" />
+      <div className="absolute bottom-0 left-0 h-44 w-44 rounded-full bg-[#0f8a7a]/20 blur-3xl" />
+      <div className="relative flex h-full flex-col justify-between p-6 text-white">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
+          Selected build
+        </p>
+        <div>
+          <p className="font-display text-5xl leading-none tracking-[-0.04em]">
+            {title.charAt(0)}
+          </p>
+          <p className="mt-3 text-sm text-white/72">{dates}</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  const mediaWrapperClassName = "block overflow-hidden rounded-[1.5rem]";
+
   return (
-    <div
+    <article
       className={cn(
-        "group rounded-2xl border border-border/50 bg-card overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:border-border h-full flex flex-col",
+        "group section-shell soft-outline flex h-full flex-col p-3",
         className
       )}
     >
-      <Link href={href || "#"} className="block overflow-hidden">
-        {video ? (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-52 object-cover object-top transition-transform duration-700 group-hover:scale-105"
-          />
-        ) : image ? (
-          <Image
-            src={image}
-            alt={title}
-            width={800}
-            height={500}
-            className="w-full h-52 object-cover object-top transition-transform duration-700 group-hover:scale-105"
-          />
-        ) : (
-          <div className="w-full h-52 bg-gradient-to-br from-violet-100 via-fuchsia-50 to-indigo-100 dark:from-violet-950 dark:via-fuchsia-950 dark:to-indigo-950 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
-            <span className="text-4xl font-bold bg-gradient-to-br from-violet-400 to-fuchsia-400 bg-clip-text text-transparent select-none">
-              {title.charAt(0)}
-            </span>
+      {hasPrimaryLink ? (
+        <Link
+          href={href!}
+          target={primaryIsExternal ? "_blank" : undefined}
+          rel={primaryIsExternal ? "noopener noreferrer" : undefined}
+          className={mediaWrapperClassName}
+        >
+          {media}
+        </Link>
+      ) : (
+        <div className={mediaWrapperClassName}>{media}</div>
+      )}
+
+      <div className="flex flex-1 flex-col px-3 pb-3 pt-5 sm:px-4">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-2">
+              <h3 className="text-lg font-semibold leading-tight">{title}</h3>
+              {hasPrimaryLink ? (
+                <ArrowUpRightIcon className="size-4 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              ) : null}
+            </div>
+            <p className="mt-1 text-sm text-muted-foreground">{dates}</p>
           </div>
-        )}
-      </Link>
-      <div className="flex flex-col flex-1 p-5">
-        <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="font-semibold text-base sm:text-lg leading-tight">
-            {title}
-          </h3>
-          <span className="text-xs text-muted-foreground whitespace-nowrap mt-0.5 shrink-0">
-            {dates}
-          </span>
         </div>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
+
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground line-clamp-4">
           {description}
         </p>
-        <div className="mt-auto space-y-3">
-          {tags && tags.length > 0 && (
-            <div className="flex flex-wrap gap-1.5">
+
+        <div className="mt-5 space-y-4">
+          {tags.length > 0 ? (
+            <div className="flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <Badge
                   variant="secondary"
-                  className="text-[10px] sm:text-xs"
+                  className="rounded-full border border-border/60 bg-background/70 px-3 py-1.5 text-[11px]"
                   key={tag}
                 >
                   {tag}
                 </Badge>
               ))}
             </div>
-          )}
-          {links && links.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {links.map((link, idx) => (
-                <Link href={link.href} key={idx} target="_blank">
-                  <Badge className="gap-1.5 text-[10px] sm:text-xs">
+          ) : null}
+
+          {links && links.length > 0 ? (
+            <div className="mt-auto flex flex-wrap gap-2">
+              {links.map((link) =>
+                link.href ? (
+                  <Link
+                    href={link.href}
+                    key={link.type}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-border/65 bg-white/70 px-3 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-white dark:bg-white/[0.05] dark:hover:bg-white/[0.08]"
+                  >
                     {link.icon}
                     {link.type}
-                  </Badge>
-                </Link>
-              ))}
+                    <ArrowUpRightIcon className="size-3.5" />
+                  </Link>
+                ) : (
+                  <span
+                    key={link.type}
+                    className="inline-flex items-center gap-2 rounded-full border border-dashed border-border/80 px-3 py-2 text-xs font-medium text-muted-foreground"
+                  >
+                    {link.icon}
+                    {link.type}
+                  </span>
+                )
+              )}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
-    </div>
+    </article>
   );
 }

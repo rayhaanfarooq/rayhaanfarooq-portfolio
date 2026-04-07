@@ -12,7 +12,7 @@ export function ModeToggle() {
       variant="ghost"
       type="button"
       size="icon"
-      className="size-9 rounded-full"
+      className="size-10 rounded-full border border-border/60 bg-background/60 backdrop-blur-xl hover:bg-background"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <SunIcon className="h-[1.2rem] w-[1.2rem] text-muted-foreground dark:hidden" />

@@ -1,16 +1,17 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggle";
 import { DATA } from "@/data/resume";
+import { cn } from "@/lib/utils";
+import { ArrowUpRightIcon, PenLineIcon } from "lucide-react";
 import Link from "next/link";
-import { PenLineIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -20,71 +21,78 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
 
-      const sections = navItems.map((item) => item.href.replace("#", ""));
       let current = "";
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 200) {
-            current = section;
-          }
+      for (const item of navItems) {
+        const element = document.getElementById(item.href.replace("#", ""));
+        if (!element) continue;
+
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 180) {
+          current = item.href.replace("#", "");
         }
       }
+
       setActiveSection(current);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "bg-background/80 backdrop-blur-2xl border-b border-border/40 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
-          : "bg-transparent"
-      )}
-    >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
+      <nav
+        className={cn(
+          "mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-full border px-3 py-2 transition-all duration-500",
+          scrolled
+            ? "border-border/70 bg-background/82 shadow-[0_24px_60px_-35px_rgba(15,23,42,0.42)] backdrop-blur-2xl"
+            : "border-border/45 bg-white/45 backdrop-blur-xl dark:bg-black/15"
+        )}
+      >
         <Link
           href="/"
-          className="font-semibold text-lg tracking-tight hover:opacity-70 transition-opacity duration-200"
+          className="rounded-full px-3 py-2 transition-opacity duration-200 hover:opacity-75"
         >
-          RF
+          <span className="hidden font-display text-xl leading-none sm:block">
+            Rayhaan Farooq
+          </span>
+          <span className="font-display text-xl leading-none sm:hidden">RF</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "text-[13px] font-medium transition-all duration-200 relative",
-                activeSection === item.href.replace("#", "")
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              {item.label}
-              {activeSection === item.href.replace("#", "") && (
-                <span className="absolute -bottom-1 left-0 right-0 h-px bg-foreground" />
-              )}
-            </Link>
-          ))}
-          <Link
-            href="/blog"
-            className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-all duration-200 inline-flex items-center gap-1.5"
-          >
-            <PenLineIcon className="size-3.5" />
-            Blog
-          </Link>
+        <div className="hidden items-center gap-1 rounded-full border border-border/60 bg-background/60 p-1.5 backdrop-blur-xl lg:flex">
+          {navItems.map((item) => {
+            const isActive = activeSection === item.href.replace("#", "");
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "rounded-full px-4 py-2 text-sm font-medium transition-all duration-300",
+                  isActive
+                    ? "bg-foreground text-background shadow-sm"
+                    : "text-muted-foreground hover:bg-background/80 hover:text-foreground"
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <Link
+            href="/blog"
+            className="hidden items-center gap-2 rounded-full border border-border/60 bg-background/60 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:bg-background hover:text-foreground md:inline-flex"
+          >
+            <PenLineIcon className="size-4" />
+            Journal
+          </Link>
+
           {Object.entries(DATA.contact.social)
             .filter(([_, social]) => social.navbar)
             .map(([name, social]) => (
@@ -93,13 +101,24 @@ export default function Navbar() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="inline-flex size-10 items-center justify-center rounded-full border border-border/60 bg-background/60 text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-background hover:text-foreground"
+                aria-label={social.name}
               >
-                <social.icon className="size-[18px]" />
+                <social.icon className="size-[17px]" />
               </Link>
             ))}
-          <div className="w-px h-4 bg-border/60" />
-          <ModeToggle />
+
+          <div className="pl-1">
+            <ModeToggle />
+          </div>
+
+          <Link
+            href="#contact"
+            className="hidden items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-all duration-300 hover:opacity-95 xl:inline-flex"
+          >
+            Let&apos;s talk
+            <ArrowUpRightIcon className="size-4" />
+          </Link>
         </div>
       </nav>
     </header>

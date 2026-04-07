@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 interface Props {
   title: string;
@@ -9,7 +10,7 @@ interface Props {
   location: string;
   image?: string;
   links?: readonly {
-    icon: React.ReactNode;
+    icon: ReactNode;
     title: string;
     href: string;
   }[];
@@ -24,42 +25,67 @@ export function HackathonCard({
   links,
 }: Props) {
   return (
-    <li className="flex gap-4 p-5 rounded-2xl hover:bg-accent/50 transition-all duration-300 list-none">
-      <Avatar className="size-12 rounded-xl border shrink-0 bg-background">
-        <AvatarImage src={image} alt={title} className="object-contain" />
-        <AvatarFallback className="rounded-xl text-sm font-medium">
-          {title[0]}
-        </AvatarFallback>
-      </Avatar>
-      <div className="flex-1 min-w-0">
-        <div className="flex items-start justify-between gap-2">
-          <h3 className="font-semibold text-sm sm:text-base leading-tight">
-            {title}
-          </h3>
-          <span className="text-xs text-muted-foreground whitespace-nowrap shrink-0">
-            {dates}
-          </span>
-        </div>
-        {location && (
-          <p className="text-xs text-muted-foreground mt-1">{location}</p>
-        )}
-        {description && (
-          <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-            {description}
-          </p>
-        )}
-        {links && links.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-3">
-            {links.map((link, idx) => (
-              <Link href={link.href} key={idx} target="_blank">
-                <Badge variant="secondary" className="gap-1.5 text-xs">
-                  {link.icon}
-                  {link.title}
-                </Badge>
-              </Link>
-            ))}
+    <li className="section-shell soft-outline list-none p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-border/80">
+      <div className="flex gap-4">
+        <Avatar className="size-12 rounded-2xl border border-border/60 bg-background shrink-0">
+          <AvatarImage
+            src={image}
+            alt={title}
+            className="object-contain p-1"
+          />
+          <AvatarFallback className="rounded-2xl text-sm font-medium">
+            {title[0]}
+          </AvatarFallback>
+        </Avatar>
+
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h3 className="text-base font-semibold leading-tight sm:text-lg">
+                {title}
+              </h3>
+              {location ? (
+                <p className="mt-1 text-sm text-muted-foreground">{location}</p>
+              ) : null}
+            </div>
+
+            <p className="shrink-0 text-sm text-muted-foreground">{dates}</p>
           </div>
-        )}
+
+          {description ? (
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
+              {description}
+            </p>
+          ) : null}
+
+          {links && links.length > 0 ? (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {links.map((link) =>
+                link.href ? (
+                  <Link
+                    href={link.href}
+                    key={link.title}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-border/65 bg-white/70 px-3 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-white dark:bg-white/[0.05] dark:hover:bg-white/[0.08]"
+                  >
+                    {link.icon}
+                    {link.title}
+                    <ArrowUpRightIcon className="size-3.5" />
+                  </Link>
+                ) : (
+                  <span
+                    key={link.title}
+                    className="inline-flex items-center gap-2 rounded-full border border-dashed border-border/80 px-3 py-2 text-xs font-medium text-muted-foreground"
+                  >
+                    {link.icon}
+                    {link.title}
+                  </span>
+                )
+              )}
+            </div>
+          ) : null}
+        </div>
       </div>
     </li>
   );

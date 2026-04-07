@@ -4,65 +4,65 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 11%;
+    --background: 34 43% 96%;
+    --foreground: 214 35% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 11%;
+    --card-foreground: 214 35% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 11%;
+    --popover-foreground: 214 35% 16%;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 212 52% 14%;
+    --primary-foreground: 38 43% 96%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary: 36 35% 91%;
+    --secondary-foreground: 214 35% 18%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 2% 46%;
+    --muted: 35 31% 92%;
+    --muted-foreground: 215 15% 38%;
 
-    --accent: 240 5% 96%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 24 70% 92%;
+    --accent-foreground: 214 35% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 221 83% 53%;
+    --border: 29 26% 82%;
+    --input: 29 26% 82%;
+    --ring: 18 78% 52%;
 
-    --radius: 0.75rem;
+    --radius: 1.25rem;
   }
 
   .dark {
-    --background: 0 0% 2%;
-    --foreground: 240 5% 96%;
+    --background: 221 38% 8%;
+    --foreground: 35 38% 93%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 240 5% 96%;
+    --card: 222 34% 10%;
+    --card-foreground: 35 38% 93%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 240 5% 96%;
+    --popover: 222 34% 10%;
+    --popover-foreground: 35 38% 93%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --primary: 35 38% 93%;
+    --primary-foreground: 221 38% 8%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 220 22% 14%;
+    --secondary-foreground: 35 38% 93%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 240 2% 55%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 34 18% 70%;
 
-    --accent: 0 0% 10%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 22 44% 22%;
+    --accent-foreground: 35 38% 93%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 221 83% 53%;
+    --border: 221 17% 24%;
+    --input: 221 17% 24%;
+    --ring: 23 84% 65%;
   }
 }
 
@@ -76,13 +76,48 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-image:
+      radial-gradient(circle at top left, rgba(225, 103, 47, 0.18), transparent 22rem),
+      radial-gradient(circle at 78% 12%, rgba(22, 121, 113, 0.16), transparent 20rem),
+      radial-gradient(circle at 50% 100%, rgba(241, 196, 116, 0.12), transparent 26rem),
+      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background)) 100%);
+    min-height: 100vh;
+    position: relative;
   }
   ::selection {
-    @apply bg-blue-500/20;
+    background: rgba(226, 114, 49, 0.22);
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+    background-size: 120px 120px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.38), transparent 85%);
+    opacity: 0.18;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at center, rgba(255, 255, 255, 0.24) 0, transparent 55%),
+      repeating-linear-gradient(
+        0deg,
+        rgba(15, 23, 42, 0.018) 0,
+        rgba(15, 23, 42, 0.018) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+    mix-blend-mode: soft-light;
+    opacity: 0.35;
   }
 }
 
-/* ════════ Animated gradient blobs ════════ */
 @keyframes blob {
   0%,
   100% {
@@ -115,7 +150,6 @@
   animation-delay: 6s;
 }
 
-/* ════════ Bounce indicator ════════ */
 @keyframes bounce-gentle {
   0%,
   100% {
@@ -132,7 +166,45 @@
   animation: bounce-gentle 2.5s ease-in-out infinite;
 }
 
-/* ════════ Blog code styles ════════ */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(-3deg);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), var(--font-sans), Arial, sans-serif;
+  }
+
+  .section-shell {
+    @apply relative overflow-hidden rounded-[2rem] border border-border/60 bg-white/60 shadow-[0_24px_80px_-40px_rgba(15,23,42,0.28)] backdrop-blur-xl dark:bg-white/[0.04] dark:shadow-[0_24px_80px_-40px_rgba(0,0,0,0.5)];
+  }
+
+  .glass-panel {
+    @apply rounded-[1.5rem] border border-white/55 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.05];
+  }
+
+  .section-kicker {
+    @apply inline-flex items-center gap-2 rounded-full border border-border/70 bg-white/65 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground shadow-sm backdrop-blur-sm dark:bg-white/[0.05];
+  }
+
+  .hero-orb {
+    @apply absolute rounded-full blur-3xl opacity-80 dark:opacity-60;
+    animation: drift 9s ease-in-out infinite;
+  }
+
+  .soft-outline {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      0 1px 0 rgba(15, 23, 42, 0.02);
+  }
+}
+
 h3 code {
   @apply !text-lg md:!text-xl;
 }

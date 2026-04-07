@@ -6,18 +6,18 @@ export const DATA = {
   name: "Rayhaan Farooq",
   initials: "RF",
   url: "https://rayhaanfarooq.netlify.app",
-  location: "Ottawa, CA",
-  locationLink: "https://www.google.com/maps/place/ottawa",
+  location: "Toronto, CA",
+  locationLink: "https://www.google.com/maps/place/toronto",
   description:
-    "Software Engineer passionate about building elegant digital experiences. I've shipped production code at companies like Shopify and Ross Video — always focused on craft, performance, and user impact.",
+    "Software engineer building full-stack products, internal tools, and AI systems. I've shipped code at Shopify and Ross Video and care a lot about clean execution.",
   summary:
-    "I'm pursuing a Computer Science degree (AI/ML specialization) at Carleton University with a minor in Statistics, maintaining a 3.95 CGPA. My technical range spans frontend frameworks like React, Next.js, and TailwindCSS to backend systems with Ruby on Rails, Node.js, and Golang. I'm actively expanding into cloud infrastructure, AI/ML technologies, and entrepreneurship. When I'm not coding, you'll find me on hiking trails exploring the outdoors.",
+    "I'm studying Computer Science with an AI/ML specialization at Carleton University and a minor in Statistics, currently maintaining a 3.95 CGPA. Most of my work has been across React, Next.js, Rails, Node.js, Golang, and backend data systems. Lately I've been especially interested in cloud infrastructure, AI tooling, and building products people genuinely want to use. Outside of coding, I'm usually hiking or working on side projects.",
 
-  avatarUrl: "/hero.jpg",
+  avatarUrl: "/mainhero.jpg",
 
   skills: [
-    "Typescript",
-    "Javascript",
+    "TypeScript",
+    "JavaScript",
     "Golang",
     "Java",
     "Python",
@@ -32,11 +32,16 @@ export const DATA = {
     "Node.js",
     "Next.js",
     "TailwindCSS",
+    "Bootstrap",
+    "Express.js",
+    "GraphQL",
+    "Cloudflare Workers",
     "Firebase",
     "Supabase",
     "Ruby on Rails",
     "PostgreSQL",
     "MongoDB",
+    "MySQL",
     "Docker",
     "Git",
     "Jenkins",
@@ -44,6 +49,10 @@ export const DATA = {
     "Linux",
     "Stripe",
     "OpenAI",
+    "RAG pipelines",
+    "Vector DB / embeddings",
+    "BigQuery",
+    "Slurm",
     "Grafana",
     "GCP",
     "AWS",
@@ -95,13 +104,12 @@ export const DATA = {
       company: "Carleton University",
       href: "https://carleton.ca",
       badges: [],
-      location: "Ottawa, ON",
+      location: "Toronto, ON",
       title: "Teaching Assistant",
       logoUrl: "/carleton.PNG",
       start: "January 2026",
       end: "May 2026",
-      description:
-        "Teaching Assistant at Carleton University.",
+      description: "Teaching Assistant at Carleton University.",
     },
     {
       company: "Shopify",
@@ -131,7 +139,7 @@ export const DATA = {
       company: "Carleton University",
       href: "https://carleton.ca",
       badges: [],
-      location: "Ottawa, ON",
+      location: "Toronto, ON",
       title: "Teaching Assistant: Abstract Data Structures & Algorithms",
       logoUrl: "/carleton.PNG",
       start: "January 2025",
@@ -184,11 +192,7 @@ export const DATA = {
       active: true,
       description:
         "Built a real-time job alert system detecting new postings in seconds, driving rapid applications and more interviews. Implemented a serverless JavaScript backend on Cloudflare Workers, achieving 99.9% uptime. Integrated the Discord API to deliver instant alerts, growing a 100+ member community.",
-      technologies: [
-        "Golang",
-        "Cloudflare Workers",
-        "Discord API",
-      ],
+      technologies: ["Golang", "Cloudflare Workers", "Discord API"],
       links: [
         {
           type: "Coming Soon",
@@ -197,6 +201,24 @@ export const DATA = {
         },
       ],
       image: "",
+      video: "",
+    },
+    {
+      title: "Herb",
+      href: "",
+      dates: "January 2025",
+      active: true,
+      description:
+        "Captained a 4-person team to 3rd at uOttaHack7, developing Herb, an innovative disaster response solution. Engineered a remote controlled rover by integrating QNX with Raspberry Pi hardware architecture. Implemented motion control algorithms in Python, enabling navigation and movement using remote control.",
+      technologies: ["Python", "QNX", "Bash", "Vim", "Raspberry Pi"],
+      links: [
+        {
+          type: "Github",
+          href: "https://github.com/Ariz-Kazani/uOttaHack7",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/herb.jpg",
       video: "",
     },
     {
@@ -222,24 +244,6 @@ export const DATA = {
         },
       ],
       image: "/ravenhaven.png",
-      video: "",
-    },
-    {
-      title: "Herb",
-      href: "",
-      dates: "January 2025",
-      active: true,
-      description:
-        "Captained a 4-person team to 3rd at uOttaHack7, developing Herb, an innovative disaster response solution. Engineered a remote controlled rover by integrating QNX with Raspberry Pi hardware architecture. Implemented motion control algorithms in Python, enabling navigation and movement using remote control.",
-      technologies: ["Python", "QNX", "Bash", "Vim", "Raspberry Pi"],
-      links: [
-        {
-          type: "Github",
-          href: "https://github.com/Ariz-Kazani/uOttaHack7",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/herb.jpg",
       video: "",
     },
     {
@@ -341,7 +345,7 @@ export const DATA = {
     {
       title: "uOttaHack 7",
       dates: "January 2025",
-      location: "Ottawa, Ontario",
+      location: "Toronto, Ontario",
       description:
         "Won 3rd place with Herb, an innovative disaster response solution using QNX and Raspberry Pi.",
       image: "/uottahack7.png",
@@ -356,7 +360,7 @@ export const DATA = {
     {
       title: "Discover Technata Hacks",
       dates: "October 2024",
-      location: "Ottawa, Ontario",
+      location: "Toronto, Ontario",
       description:
         "Participated in the 2024 hosting of Discover Technata Hacks",
       image: "discover2023.JPG",
@@ -371,7 +375,7 @@ export const DATA = {
     {
       title: "Discover Technata Hacks",
       dates: "October 2023",
-      location: "Ottawa, Ontario",
+      location: "Toronto, Ontario",
       description:
         "Developed MonsTerra, an app to reimburse consumers and companies for purchasing environmentally friendly products",
       image: "discover2023.JPG",
@@ -389,7 +393,7 @@ export const DATA = {
     {
       title: "IEEE SPAC Pitch Competition",
       dates: "November 2024",
-      location: "Ottawa, Ontario",
+      location: "Toronto, Ontario",
       description:
         "Participated in the IEEE SPAC Pitch Competition where I pitched Jodi, a plug and play rebate system for businesses",
       image: "/ieee.webp",
@@ -419,7 +423,7 @@ export const DATA = {
     {
       title: "DreamLaunch Hackathon",
       dates: "November 2023",
-      location: "Ottawa, Ontario",
+      location: "Toronto, Ontario",
       description:
         "Further built out MonsTerra, an app to reimburse consumers and companies for purchasing environmentally friendly products",
       image: "dreamlaunch.JPG",
