@@ -139,6 +139,16 @@ const highlightCards = [
   },
 ];
 
+const coursework = [
+  "Data Structures & Algorithms",
+  "Systems Programming",
+  "Operating Systems",
+  "Design & Analysis of Algorithms",
+  "Discrete Mathematics",
+  "Linear Algebra",
+  "Probability & Statistics",
+];
+
 function SectionHeading({
   kicker,
   title,
@@ -282,6 +292,7 @@ export default function Page() {
     ...DATA.competitions.map((c) => ({ ...c, _type: "competition" as const })),
   ];
 
+  const education = DATA.education[0];
   const featuredProject = DATA.projects[0];
   const supportingProjects = DATA.projects.slice(1);
   const currentRole = DATA.work[0];
@@ -522,31 +533,61 @@ export default function Page() {
                   />
                 </BlurFade>
               ))}
-
-              <BlurFade delay={BLUR_FADE_DELAY * 7} inView>
-                <div className="section-shell p-3 sm:p-4">
-                  <div className="px-3 py-3 sm:px-4">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground">
-                      Education
-                    </p>
-                  </div>
-                  <div className="space-y-3">
-                    {DATA.education.map((education) => (
-                      <ResumeCard
-                        key={education.school}
-                        logoUrl={education.logoUrl}
-                        altText={education.school}
-                        title={education.school}
-                        subtitle={education.degree}
-                        href={education.href}
-                        period={`${education.start} - ${education.end}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </BlurFade>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="education" className="px-6 py-10 sm:py-14">
+        <div className="mx-auto max-w-6xl">
+          <BlurFade delay={BLUR_FADE_DELAY} inView>
+            <div className="section-shell p-6 sm:p-8">
+              <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                <div className="space-y-4">
+                  <span className="section-kicker">Education</span>
+                  <div className="flex items-start gap-4">
+                    <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(15,138,122,0.12)] text-[#0f8a7a] dark:bg-[rgba(123,231,216,0.12)] dark:text-[#9fe4da]">
+                      <GraduationCapIcon className="size-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-2xl leading-tight sm:text-3xl">
+                        {education.school}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                        {education.degree}
+                      </p>
+                      <p className="mt-3 text-sm font-medium text-muted-foreground">
+                        {education.start} - {education.end}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                    Relevant coursework
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {coursework.map((course) => (
+                      <Badge
+                        key={course}
+                        variant="secondary"
+                        className="rounded-full border border-border/70 bg-background/70 px-3 py-1.5 text-xs"
+                      >
+                        {course}
+                      </Badge>
+                    ))}
+                  </div>
+                  <p className="text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
+                    My coursework has given me a strong foundation in algorithms,
+                    systems, operating systems, mathematics, and statistics, and
+                    it continues to shape the way I think about building reliable
+                    software.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </BlurFade>
         </div>
       </section>
 
