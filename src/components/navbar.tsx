@@ -5,6 +5,7 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import { ArrowUpRightIcon, PenLineIcon } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -18,6 +19,11 @@ const navItems = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
+
+  const getSectionHref = (hash: string) => {
+    return pathname === "/" ? hash : `/${hash}`;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,7 +76,7 @@ export default function Navbar() {
             return (
               <Link
                 key={item.href}
-                href={item.href}
+                href={getSectionHref(item.href)}
                 className={cn(
                   "rounded-full px-4 py-2 text-sm font-medium transition-all duration-300",
                   isActive
@@ -113,7 +119,7 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="#contact"
+            href={getSectionHref("#contact")}
             className="hidden items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-all duration-300 hover:opacity-95 xl:inline-flex"
           >
             Let&apos;s talk

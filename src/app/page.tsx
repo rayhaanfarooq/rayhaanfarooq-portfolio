@@ -429,7 +429,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="about" className="px-6 py-14 sm:py-20">
+      <section id="about" className="scroll-mt-28 px-6 py-14 sm:scroll-mt-32 sm:py-20">
         <div className="mx-auto grid max-w-6xl items-start gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <BlurFade delay={BLUR_FADE_DELAY} inView>
             <div className="section-shell h-full p-8 sm:p-10">
@@ -485,7 +485,10 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="experience" className="px-6 py-14 sm:py-20">
+      <section
+        id="experience"
+        className="scroll-mt-28 px-6 py-14 sm:scroll-mt-32 sm:py-20"
+      >
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-[0.38fr_0.62fr]">
             <BlurFade delay={BLUR_FADE_DELAY} inView>
@@ -538,7 +541,10 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="education" className="px-6 py-10 sm:py-14">
+      <section
+        id="education"
+        className="scroll-mt-28 px-6 py-10 sm:scroll-mt-32 sm:py-14"
+      >
         <div className="mx-auto max-w-6xl">
           <BlurFade delay={BLUR_FADE_DELAY} inView>
             <div className="section-shell p-6 sm:p-8">
@@ -591,7 +597,10 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="projects" className="px-6 py-14 sm:py-20">
+      <section
+        id="projects"
+        className="scroll-mt-28 px-6 py-14 sm:scroll-mt-32 sm:py-20"
+      >
         <div className="mx-auto max-w-6xl">
           <BlurFade delay={BLUR_FADE_DELAY} inView>
             <SectionHeading
@@ -700,6 +709,7 @@ export default function Page() {
                     description={project.description}
                     dates={project.dates}
                     tags={project.technologies}
+                    eyebrow={project.title === "Herb" ? "Selected Build" : undefined}
                     image={project.image}
                     video={project.video}
                     links={project.links}
@@ -722,6 +732,7 @@ export default function Page() {
                   description={project.description}
                   dates={project.dates}
                   tags={project.technologies}
+                  eyebrow={project.title === "Herb" ? "Selected Build" : undefined}
                   image={project.image}
                   video={project.video}
                   links={project.links}
@@ -733,7 +744,10 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="skills" className="px-6 py-14 sm:py-20">
+      <section
+        id="skills"
+        className="scroll-mt-28 px-6 py-14 sm:scroll-mt-32 sm:py-20"
+      >
         <div className="mx-auto max-w-6xl">
           <BlurFade delay={BLUR_FADE_DELAY} inView>
             <div className="section-shell overflow-hidden bg-[linear-gradient(145deg,rgba(17,32,54,0.96),rgba(10,18,32,0.94))] p-8 text-white sm:p-10">
@@ -864,7 +878,10 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="contact" className="px-6 py-16 sm:py-24">
+      <section
+        id="contact"
+        className="scroll-mt-28 px-6 py-16 sm:scroll-mt-32 sm:py-24"
+      >
         <div className="mx-auto max-w-6xl">
           <BlurFade delay={BLUR_FADE_DELAY} inView>
             <div className="section-shell overflow-hidden bg-[linear-gradient(145deg,rgba(18,38,63,0.97),rgba(9,17,31,0.96))] px-8 py-10 text-white sm:px-12 sm:py-14">
