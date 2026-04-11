@@ -1,0 +1,41 @@
+---
+title: "Building a Matching Engine at Shopify"
+publishedAt: "2026-04-08"
+summary: "Working on intern-team matching at Shopify gave me a look at messy operational systems at scale and turned a classic algorithm into something with real-world impact."
+---
+
+One of the most interesting things about my Shopify project was how quickly it changed my understanding of what large-scale internal systems actually look like.
+
+From the outside, a lot of company workflows seem polished and automatic. Once you get closer, you realize that many of the important ones are still surprisingly manual, messy, and high-stakes. That was definitely true here. I was working on automating the workflow from matching interns to teams all the way through to confirming placements, and it gave me a behind-the-scenes look at how much coordination and ambiguity can live inside a process that affects a lot of people.
+
+## Why the problem was interesting
+
+This was not just a scheduling or assignment problem. It involved preferences, fairness, constraints, and a process that needed to feel trustworthy for everyone involved.
+
+On one side, there were interns with their own goals and preferences. On the other, there were teams with their own needs, priorities, and constraints. The challenge was not just finding a valid assignment. It was finding a stable one that reduced ambiguity and made the overall process easier to manage.
+
+That is what made the problem fun. It sat at the intersection of algorithm design, operations, and human impact.
+
+## Using Gale-Shapley in a real system
+
+To solve it, I built a matching engine based on the Gale-Shapley algorithm.
+
+I liked this approach because it gave the project a strong theoretical foundation while also being very practical. Stable matching is one of those concepts that feels elegant in class, but it becomes much more satisfying when you get to apply it to a real system with real users and real stakes. In this case, it helped reduce both the time and the uncertainty involved in the allocation process.
+
+There was something especially satisfying about seeing a classic algorithm move from textbook territory into an operational workflow that actually mattered.
+
+## Looking beyond the obvious inspiration
+
+One of the more fun parts of the project was how widely I looked for inspiration.
+
+I spent time thinking about how matching problems show up in other systems, including dating apps, where compatibility, ranking, and user preferences all play a huge role. Obviously the product goals are different, but the core idea of balancing preferences and outcomes is surprisingly transferable.
+
+That made the project feel like a cool mix of theory and system design. I was not just implementing an algorithm. I was thinking about how real-world platforms approach matching problems and how to translate those ideas into a deterministic, operationally useful workflow.
+
+## What I learned
+
+This project taught me that some of the most impactful engineering work happens in places most people never see.
+
+A good internal tool can remove huge amounts of manual coordination, reduce confusion, and make an organization move faster without ever becoming flashy. It also reminded me how powerful it can be to combine solid theory with a messy real-world problem. When that works well, the result feels both elegant and useful.
+
+That is probably why this project stuck with me. It was algorithmic, operational, and practical all at once.

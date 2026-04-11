@@ -1,0 +1,43 @@
+---
+title: "What Ross Video Taught Me About Building Useful RAG Systems"
+publishedAt: "2026-04-09"
+summary: "Building a full-stack RAG chatbot at Ross Video taught me that retrieval is only half the job. The real challenge is making the answers actually useful."
+---
+
+At Ross Video, I built a full-stack RAG chatbot system end to end, and it changed the way I think about AI systems in production.
+
+On paper, the project sounded straightforward: ingest internal knowledge, embed it, store it, and let people query it semantically. In practice, it was much more interesting than that. I had to think about deployment, infrastructure, automation, ingestion quality, prompt design, retrieval quality, and what it actually means for an answer to be useful in a work setting.
+
+## Building the system from scratch
+
+One of the most valuable parts of the experience was that I got to build the system across the full stack.
+
+I deployed the application on custom VMs and set up CI/CD pipelines from scratch. That part alone taught me a lot about automation and how important it is for maintaining velocity once a project becomes real. It is one thing to get a prototype running. It is another thing to make sure it can be deployed, updated, and trusted by other people.
+
+That reinforced something I already believed but understood much more clearly afterward: automation is not just a convenience. It is part of what makes a system maintainable.
+
+## The ingestion pipeline was a project on its own
+
+The data side was also much more involved than I expected.
+
+The pipeline pulled unstructured information from internal SharePoint wikis, GitHub repositories, and other knowledge sources. Before any of that data could become useful, it had to be cleaned, normalized, and moved into a form that the retrieval system could actually work with. From there, it was uploaded to AWS S3 for downstream processing, embedded, and stored in ChromaDB for semantic search.
+
+That flow taught me that a lot of the real difficulty in AI systems happens before the model ever produces a response. If the input pipeline is messy, the answers will be messy too.
+
+## The hardest part was not retrieval
+
+The biggest lesson from the whole project was that the hardest part of RAG is not retrieval or storage. It is output quality.
+
+Early on, the system technically worked, but a lot of the responses were noisy, awkward, or borderline gibberish. It was a good reminder that getting relevant chunks back from a vector database does not automatically mean you have built a useful product. If the final answer is confusing, users will not care that your retrieval pipeline is elegant.
+
+That pushed me into a lot of iteration around prompt design, context structuring, and retrieval quality. I spent a lot of time figuring out how to present the right context, how much context to include, and how to reduce the cases where the model would latch onto the wrong details or produce something vague.
+
+That was probably the most important part of the work, because it forced me to stop thinking of the system as a sequence of components and start thinking about it as a user-facing product.
+
+## What I took away
+
+Ross taught me that AI systems become much more interesting when you judge them by usefulness instead of novelty.
+
+A RAG demo can look impressive very quickly. A RAG system that people actually trust is much harder to build. You need solid ingestion, decent retrieval, and careful output shaping, but you also need the discipline to keep refining the system until the answers are clear and helpful.
+
+That experience made me much more interested in the gap between "it technically works" and "someone would actually rely on this." That gap is where a lot of the real engineering work lives.

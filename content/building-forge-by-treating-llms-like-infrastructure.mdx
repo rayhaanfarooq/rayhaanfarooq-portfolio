@@ -1,0 +1,60 @@
+---
+title: "The Main Idea Behind Forge Was Simple: I Was Broke"
+publishedAt: "2026-04-11"
+summary: "The core engineering idea behind Forge was fallback orchestration across free LLM APIs so the workflow could still complete even when one provider failed."
+---
+
+The main idea behind Forge was not some grand AI philosophy. It was honestly much simpler than that.
+
+I was broke.
+
+That meant I could not build the project around one paid model and assume everything would be fine. I had to rely heavily on free APIs, and free APIs are unpredictable. Sometimes they are down, sometimes they are rate-limited, sometimes they return garbage, and sometimes they just stop working for no obvious reason.
+
+So the core idea behind Forge became: if one model fails, another one should take over.
+
+## The actual problem
+
+Forge uses LLMs to help generate tests, which only works if the model call is reliable enough to fit into a real workflow.
+
+That was the issue from the start. A single free API was never reliable enough on its own. If Forge depended on one provider, the whole experience would feel random. Sometimes it would work, sometimes it would fail, and that is not good enough if you want the tool to feel usable.
+
+I did not have the budget to solve that by paying for the best model every time, so I had to solve it with engineering instead.
+
+## The one idea that mattered
+
+The most important thing I built in Forge was fallback orchestration across multiple LLM APIs.
+
+Instead of sending a request to one model and hoping for the best, Forge could move through multiple providers. If one failed, another could try. If one returned weak output, I could retry with another option. If there was a free provider available first, the system could start there before moving on.
+
+That was the whole idea.
+
+Not better prompting.
+
+Not chasing the smartest model.
+
+Just building the system so that unreliable free APIs could still produce a reliable enough experience overall.
+
+## Why I liked this approach
+
+What I liked about this design is that it turned a personal constraint into an engineering problem.
+
+I was not working around cost by lowering my standards. I was working around cost by designing for failure. In a weird way, the fact that I had to use free APIs pushed the project in a better direction, because it forced me to think about resilience from the beginning.
+
+Once I accepted that individual providers were unreliable, the system got a lot clearer:
+
+- try one provider
+- if it fails, move to the next
+- if the output is bad, try another
+- keep the workflow moving instead of blocking on one model
+
+That made Forge feel less like "an app calling AI" and more like a system designed to survive flaky dependencies.
+
+## What Forge taught me
+
+The biggest lesson from Forge was that a lot of good engineering comes from constraints.
+
+If I had unlimited money, I probably would have just called a strong paid model and moved on. Because I did not, I ended up building something more interesting: a workflow that treated LLMs as unreliable components and engineered around that reality.
+
+That is still the part of Forge I like most.
+
+Not the fact that it used AI, but the fact that it made cheap, unreliable AI usable.
