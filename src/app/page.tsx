@@ -11,6 +11,9 @@ import {
   ArrowDownIcon,
   ArrowUpRightIcon,
   BriefcaseIcon,
+  DownloadIcon,
+  ExternalLinkIcon,
+  FileTextIcon,
   GraduationCapIcon,
   MailIcon,
   MoveRightIcon,
@@ -148,6 +151,8 @@ const coursework = [
   "Linear Algebra",
   "Probability & Statistics",
 ];
+
+const resumeFile = "/documents/Rayhaan_Farooq_Resume_F26.pdf";
 
 function SectionHeading({
   kicker,
@@ -341,6 +346,14 @@ export default function Page() {
                     <MailIcon className="size-4" />
                     Get in touch
                   </Link>
+                  <a
+                    href={resumeFile}
+                    download
+                    className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-white/70 px-6 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:bg-white dark:bg-white/[0.05] dark:hover:bg-white/[0.08]"
+                  >
+                    <DownloadIcon className="size-4" />
+                    Download resume
+                  </a>
                 </div>
               </BlurFade>
 
@@ -429,7 +442,10 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="about" className="scroll-mt-28 px-6 py-14 sm:scroll-mt-32 sm:py-20">
+      <section
+        id="about"
+        className="scroll-mt-28 px-6 py-14 sm:scroll-mt-32 sm:py-20"
+      >
         <div className="mx-auto grid max-w-6xl items-start gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <BlurFade delay={BLUR_FADE_DELAY} inView>
             <div className="section-shell h-full p-8 sm:p-10">
@@ -585,11 +601,88 @@ export default function Page() {
                     ))}
                   </div>
                   <p className="text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
-                    My coursework has given me a strong foundation in algorithms,
-                    systems, operating systems, mathematics, and statistics, and
-                    it continues to shape the way I think about building reliable
-                    software.
+                    My coursework has given me a strong foundation in
+                    algorithms, systems, operating systems, mathematics, and
+                    statistics, and it continues to shape the way I think about
+                    building reliable software.
                   </p>
+                </div>
+              </div>
+            </div>
+          </BlurFade>
+        </div>
+      </section>
+
+      <section
+        id="resume"
+        className="scroll-mt-28 px-6 py-12 sm:scroll-mt-32 sm:py-16"
+      >
+        <div className="mx-auto max-w-6xl">
+          <BlurFade delay={BLUR_FADE_DELAY} inView>
+            <div className="section-shell overflow-hidden p-6 sm:p-8">
+              <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-start">
+                <div className="space-y-5">
+                  <SectionHeading
+                    kicker="Resume"
+                    title="A quick interactive look at my resume."
+                    description="You can scroll, zoom, and inspect the PDF directly here, or download the latest version."
+                  />
+
+                  <div className="glass-panel p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[rgba(15,138,122,0.12)] text-[#0f8a7a] dark:bg-[rgba(123,231,216,0.12)] dark:text-[#9fe4da]">
+                        <FileTextIcon className="size-5" />
+                      </div>
+                      <div>
+                        <p className="text-base font-semibold">My Resume! :)</p>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          Latest PDF version with experience, projects, and
+                          technical background.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      <a
+                        href={resumeFile}
+                        download
+                        className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-all duration-300 hover:-translate-y-0.5 hover:opacity-95"
+                      >
+                        <DownloadIcon className="size-4" />
+                        Download resume
+                      </a>
+                      <a
+                        href={resumeFile}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-white/70 px-5 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:bg-white dark:bg-white/[0.05] dark:hover:bg-white/[0.08]"
+                      >
+                        <ExternalLinkIcon className="size-4" />
+                        Open full view
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="section-shell overflow-hidden border border-border/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(248,246,241,0.78))] p-3 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]">
+                  <div className="flex items-center justify-between rounded-[1.4rem] border border-border/60 bg-background/80 px-4 py-3">
+                    <div className="flex items-center gap-2">
+                      <span className="size-2.5 rounded-full bg-[#cf6a34]" />
+                      <span className="size-2.5 rounded-full bg-[#f0c272]" />
+                      <span className="size-2.5 rounded-full bg-[#0f8a7a]" />
+                    </div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                      Interactive PDF
+                    </p>
+                  </div>
+
+                  <div className="mt-3 overflow-hidden rounded-[1.5rem] border border-border/60 bg-white shadow-[0_24px_80px_-40px_rgba(15,23,42,0.28)] dark:bg-slate-950">
+                    <iframe
+                      src={`${resumeFile}#toolbar=1&navpanes=0&view=FitH`}
+                      title="Rayhaan Farooq Resume PDF"
+                      className="h-[34rem] w-full sm:h-[46rem]"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -709,7 +802,9 @@ export default function Page() {
                     description={project.description}
                     dates={project.dates}
                     tags={project.technologies}
-                    eyebrow={project.title === "Herb" ? "Selected Build" : undefined}
+                    eyebrow={
+                      project.title === "Herb" ? "Selected Build" : undefined
+                    }
                     image={project.image}
                     video={project.video}
                     links={project.links}
@@ -732,7 +827,9 @@ export default function Page() {
                   description={project.description}
                   dates={project.dates}
                   tags={project.technologies}
-                  eyebrow={project.title === "Herb" ? "Selected Build" : undefined}
+                  eyebrow={
+                    project.title === "Herb" ? "Selected Build" : undefined
+                  }
                   image={project.image}
                   video={project.video}
                   links={project.links}
@@ -792,89 +889,87 @@ export default function Page() {
       </section>
 
       <section className="px-6 py-14 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 lg:grid-cols-2">
-            <BlurFade delay={BLUR_FADE_DELAY} inView>
-              <div className="section-shell h-full p-6 sm:p-8">
-                <div className="flex items-center gap-3">
-                  <div className="flex size-12 items-center justify-center rounded-2xl bg-[rgba(15,138,122,0.12)] text-[#0f8a7a] dark:bg-[rgba(123,231,216,0.12)] dark:text-[#9fe4da]">
-                    <BriefcaseIcon className="size-5" />
-                  </div>
-                  <div>
-                    <p className="section-kicker">Community</p>
-                    <h3 className="mt-3 font-display text-2xl leading-tight sm:text-3xl">
-                      Community and student leadership.
-                    </h3>
-                  </div>
+        <div className="mx-auto max-w-4xl space-y-6">
+          <BlurFade delay={BLUR_FADE_DELAY} inView>
+            <div className="section-shell p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <div className="flex size-12 items-center justify-center rounded-2xl bg-[rgba(15,138,122,0.12)] text-[#0f8a7a] dark:bg-[rgba(123,231,216,0.12)] dark:text-[#9fe4da]">
+                  <BriefcaseIcon className="size-5" />
                 </div>
-
-                <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-                  I&apos;ve spent a lot of time helping run hackathons and
-                  student groups, especially on the sponsorship side.
-                </p>
-
-                <div className="mt-6 space-y-3">
-                  {DATA.clubs.map((club, id) => (
-                    <BlurFade
-                      key={club.name}
-                      delay={BLUR_FADE_DELAY * 2 + id * 0.05}
-                      inView
-                    >
-                      <ResumeCard
-                        logoUrl={club.logoUrl}
-                        altText={club.name}
-                        title={club.name}
-                        subtitle={club.position}
-                        href={club.href}
-                        period={`${club.start} - ${club.end ?? "Present"}`}
-                        description={club.description}
-                      />
-                    </BlurFade>
-                  ))}
+                <div>
+                  <p className="section-kicker">Community</p>
+                  <h3 className="mt-3 font-display text-2xl leading-tight sm:text-3xl">
+                    Community and student leadership.
+                  </h3>
                 </div>
               </div>
-            </BlurFade>
 
-            <BlurFade delay={BLUR_FADE_DELAY * 2} inView>
-              <div className="section-shell h-full p-6 sm:p-8">
-                <div className="flex items-center gap-3">
-                  <div className="flex size-12 items-center justify-center rounded-2xl bg-[rgba(223,117,56,0.12)] text-[#cf6a34] dark:bg-[rgba(255,183,123,0.12)] dark:text-[#ffcf9b]">
-                    <TrophyIcon className="size-5" />
-                  </div>
-                  <div>
-                    <p className="section-kicker">Competitions</p>
-                    <h3 className="mt-3 font-display text-2xl leading-tight sm:text-3xl">
-                      Hackathons and competitions.
-                    </h3>
-                  </div>
-                </div>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+                I&apos;ve spent a lot of time helping run hackathons and student
+                groups, especially on the sponsorship side.
+              </p>
 
-                <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-                  I like the pace of building under pressure and the chance to
-                  test ideas quickly with a team.
-                </p>
-
-                <ul className="mt-6 space-y-3">
-                  {allEvents.map((item, id) => (
-                    <BlurFade
-                      key={item.title + item.dates}
-                      delay={BLUR_FADE_DELAY * 3 + id * 0.05}
-                      inView
-                    >
-                      <HackathonCard
-                        title={item.title}
-                        description={item.description}
-                        location={item.location}
-                        dates={item.dates}
-                        image={item.image}
-                        links={item.links}
-                      />
-                    </BlurFade>
-                  ))}
-                </ul>
+              <div className="mt-6 space-y-3">
+                {DATA.clubs.map((club, id) => (
+                  <BlurFade
+                    key={club.name}
+                    delay={BLUR_FADE_DELAY * 2 + id * 0.05}
+                    inView
+                  >
+                    <ResumeCard
+                      logoUrl={club.logoUrl}
+                      altText={club.name}
+                      title={club.name}
+                      subtitle={club.position}
+                      href={club.href}
+                      period={`${club.start} - ${club.end ?? "Present"}`}
+                      description={club.description}
+                    />
+                  </BlurFade>
+                ))}
               </div>
-            </BlurFade>
-          </div>
+            </div>
+          </BlurFade>
+
+          <BlurFade delay={BLUR_FADE_DELAY * 2} inView>
+            <div className="section-shell p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <div className="flex size-12 items-center justify-center rounded-2xl bg-[rgba(223,117,56,0.12)] text-[#cf6a34] dark:bg-[rgba(255,183,123,0.12)] dark:text-[#ffcf9b]">
+                  <TrophyIcon className="size-5" />
+                </div>
+                <div>
+                  <p className="section-kicker">Competitions</p>
+                  <h3 className="mt-3 font-display text-2xl leading-tight sm:text-3xl">
+                    Hackathons and competitions.
+                  </h3>
+                </div>
+              </div>
+
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+                I like the pace of building under pressure and the chance to
+                test ideas quickly with a team.
+              </p>
+
+              <ul className="mt-6 space-y-3">
+                {allEvents.map((item, id) => (
+                  <BlurFade
+                    key={item.title + item.dates}
+                    delay={BLUR_FADE_DELAY * 3 + id * 0.05}
+                    inView
+                  >
+                    <HackathonCard
+                      title={item.title}
+                      description={item.description}
+                      location={item.location}
+                      dates={item.dates}
+                      image={item.image}
+                      links={item.links}
+                    />
+                  </BlurFade>
+                ))}
+              </ul>
+            </div>
+          </BlurFade>
         </div>
       </section>
 
@@ -908,6 +1003,14 @@ export default function Page() {
                     <MailIcon className="size-4" />
                     {DATA.contact.email}
                   </Link>
+                  <a
+                    href={resumeFile}
+                    download
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/[0.1]"
+                  >
+                    <DownloadIcon className="size-4" />
+                    Download resume
+                  </a>
                   <Link
                     href={DATA.contact.social.LinkedIn.url}
                     target="_blank"
