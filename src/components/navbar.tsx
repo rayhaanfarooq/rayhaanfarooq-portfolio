@@ -3,16 +3,17 @@
 import { ModeToggle } from "@/components/mode-toggle";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
-import { ArrowUpRightIcon, PenLineIcon } from "lucide-react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
+  { label: "Work", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
+  { label: "Stack", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -21,110 +22,111 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
 
-  const getSectionHref = (hash: string) => {
-    return pathname === "/" ? hash : `/${hash}`;
-  };
+  const getSectionHref = (hash: string) =>
+    pathname === "/" ? hash : `/${hash}`;
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 24);
 
       let current = "";
       for (const item of navItems) {
-        const element = document.getElementById(item.href.replace("#", ""));
-        if (!element) continue;
-
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= 180) {
-          current = item.href.replace("#", "");
+        const element = document.getElementById(item.href.slice(1));
+        if (element && element.getBoundingClientRect().top <= 200) {
+          current = item.href.slice(1);
         }
       }
-
       setActiveSection(current);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
+    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <nav
         className={cn(
-          "mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-full border px-3 py-2 transition-all duration-500",
+          "flex w-full max-w-5xl items-center justify-between gap-2 rounded-full border py-1.5 pl-2 pr-1.5 transition-all duration-500",
           scrolled
-            ? "border-border/70 bg-background/82 shadow-[0_24px_60px_-35px_rgba(15,23,42,0.42)] backdrop-blur-2xl"
-            : "border-border/45 bg-white/45 backdrop-blur-xl dark:bg-black/15"
+            ? "border-border bg-background/70 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+            : "border-transparent bg-transparent",
         )}
       >
         <Link
           href="/"
-          className="rounded-full px-3 py-2 transition-opacity duration-200 hover:opacity-75"
+          className="group flex items-center gap-2.5 rounded-full py-1 pl-1 pr-3"
         >
-          <span className="hidden font-display text-xl leading-none sm:block">
-            Rayhaan Farooq
+          <span className="relative size-8 shrink-0 overflow-hidden rounded-full ring-1 ring-border">
+            <Image
+              src={DATA.avatarUrl}
+              alt={DATA.name}
+              fill
+              sizes="32px"
+              className="object-cover object-[60%_38%] scale-[1.35]"
+              priority
+            />
           </span>
-          <span className="font-display text-xl leading-none sm:hidden">RF</span>
+          <span className="hidden text-sm font-medium tracking-tight sm:block">
+            {DATA.name}
+          </span>
         </Link>
 
-        <div className="hidden items-center gap-1 rounded-full border border-border/60 bg-background/60 p-1.5 backdrop-blur-xl lg:flex">
+        <div className="hidden items-center md:flex">
           {navItems.map((item) => {
-            const isActive = activeSection === item.href.replace("#", "");
-
+            const isActive = activeSection === item.href.slice(1);
             return (
               <Link
                 key={item.href}
                 href={getSectionHref(item.href)}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm font-medium transition-all duration-300",
+                  "relative rounded-full px-4 py-2 text-sm transition-colors duration-300",
                   isActive
-                    ? "bg-foreground text-background shadow-sm"
-                    : "text-muted-foreground hover:bg-background/80 hover:text-foreground"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute inset-0 -z-10 rounded-full bg-secondary"
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                  />
+                )}
                 {item.label}
               </Link>
             );
           })}
-        </div>
-
-        <div className="flex items-center gap-1.5 sm:gap-2">
           <Link
             href="/blog"
-            className="hidden items-center gap-2 rounded-full border border-border/60 bg-background/60 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:bg-background hover:text-foreground md:inline-flex"
+            className={cn(
+              "rounded-full px-4 py-2 text-sm transition-colors duration-300",
+              pathname.startsWith("/blog")
+                ? "text-foreground"
+                : "text-muted-foreground hover:text-foreground",
+            )}
           >
-            <PenLineIcon className="size-4" />
-            Journal
+            Blog
           </Link>
+        </div>
 
+        <div className="flex items-center gap-1">
           {Object.entries(DATA.contact.social)
-            .filter(([_, social]) => social.navbar)
+            .filter(([, social]) => social.navbar)
             .map(([name, social]) => (
               <Link
                 key={name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex size-10 items-center justify-center rounded-full border border-border/60 bg-background/60 text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-background hover:text-foreground"
+                className="inline-flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors duration-300 hover:bg-secondary hover:text-foreground"
                 aria-label={social.name}
               >
-                <social.icon className="size-[17px]" />
+                <social.icon className="size-4" />
               </Link>
             ))}
-
-          <div className="pl-1">
-            <ModeToggle />
-          </div>
-
-          <Link
-            href={getSectionHref("#contact")}
-            className="hidden items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-all duration-300 hover:opacity-95 xl:inline-flex"
-          >
-            Let&apos;s talk
-            <ArrowUpRightIcon className="size-4" />
-          </Link>
+          <ModeToggle />
         </div>
       </nav>
     </header>

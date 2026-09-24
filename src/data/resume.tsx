@@ -161,7 +161,7 @@ export const DATA = {
   projects: [
     {
       title: "WhatsUpMarket",
-      href: "",
+      href: "https://whatsupmarket.netlify.app",
       dates: "September 2026",
       active: true,
       description:
@@ -176,7 +176,7 @@ export const DATA = {
       links: [
         {
           type: "Live Website",
-          href: "",
+          href: "https://whatsupmarket.netlify.app",
           icon: <Icons.globe className="size-3" />,
         },
       ],

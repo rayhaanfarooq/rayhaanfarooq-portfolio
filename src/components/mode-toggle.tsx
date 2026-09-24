@@ -1,22 +1,20 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
-    <Button
-      variant="ghost"
+    <button
       type="button"
-      size="icon"
-      className="size-10 rounded-full border border-border/60 bg-background/60 backdrop-blur-xl hover:bg-background"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      aria-label="Toggle theme"
+      className="inline-flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors duration-300 hover:bg-secondary hover:text-foreground"
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
-      <SunIcon className="h-[1.2rem] w-[1.2rem] text-muted-foreground dark:hidden" />
-      <MoonIcon className="hidden h-[1.2rem] w-[1.2rem] text-muted-foreground dark:block" />
-    </Button>
+      <SunIcon className="size-4 dark:hidden" />
+      <MoonIcon className="hidden size-4 dark:block" />
+    </button>
   );
 }
