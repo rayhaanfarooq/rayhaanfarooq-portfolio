@@ -35,37 +35,46 @@ const skillCategories = [
       "TypeScript",
       "JavaScript",
       "Python",
+      "Go",
       "Java",
-      "Golang",
-      "C",
+      "Ruby",
+      "Elixir",
       "C++",
-      "Rust",
+      "C",
       "SQL",
-      "HTML / CSS",
+      "Haskell",
+      "Rust",
     ],
   },
   {
-    label: "Frameworks / Platforms",
+    label: "Frameworks / Libraries",
     items: [
-      "React",
+      "React.js",
       "Next.js",
       "Node.js",
       "Ruby on Rails",
-      "Express.js",
+      "Phoenix",
+      "TailwindCSS",
       "GraphQL",
-      "Tailwind CSS",
-      "Bootstrap",
-      "Firebase",
-      "Supabase",
-      "Cloudflare Workers",
     ],
   },
   {
-    label: "Databases",
-    items: ["PostgreSQL", "MongoDB", "MySQL"],
+    label: "Databases / Cloud",
+    items: [
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Kafka",
+      "AWS",
+      "GCP",
+      "Kubernetes",
+      "OpenSearch",
+      "Turbopuffer",
+      "Elasticsearch",
+    ],
   },
   {
-    label: "Developer Tools / Infra",
+    label: "Developer Tools",
     items: [
       "Docker",
       "Git",
@@ -73,19 +82,8 @@ const skillCategories = [
       "Linux",
       "QNX",
       "Grafana",
-      "AWS",
-      "GCP",
+      "OpenTelemetry",
       "Stripe",
-    ],
-  },
-  {
-    label: "AI / Data / Systems",
-    items: [
-      "OpenAI",
-      "RAG pipelines",
-      "Vector DB / embeddings",
-      "BigQuery",
-      "Slurm",
     ],
   },
 ];
@@ -94,7 +92,7 @@ const heroStats = [
   {
     value: "3.95",
     label: "CGPA",
-    detail: "Computer Science (AI/ML) with a Statistics minor.",
+    detail: "Computer Science (AI/ML), fourth-year standing.",
   },
   {
     value: "$100k+",
@@ -132,7 +130,7 @@ const highlightCards = [
     icon: GraduationCapIcon,
     title: "3.95 CGPA",
     description:
-      "Computer Science (AI/ML) at Carleton University with a minor in Statistics.",
+      "Honours Computer Science (AI/ML) at Carleton University, fourth-year standing, 3.95 CGPA.",
   },
   {
     icon: SparklesIcon,
@@ -325,7 +323,7 @@ export default function Page() {
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
                   I&apos;m {DATA.name}, a software engineer from Toronto.
                   I&apos;ve worked across full-stack product development,
-                  internal tools, and AI-focused systems at places like Shopify
+                  internal tools, and AI-focused systems at Fullscript, Shopify,
                   and Ross Video.
                 </p>
               </BlurFade>
@@ -408,7 +406,7 @@ export default function Page() {
 
                     <div className="absolute left-4 top-4 flex max-w-[calc(100%-2rem)] flex-wrap gap-2">
                       <div className="rounded-full border border-white/35 bg-[rgba(11,20,38,0.35)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md">
-                        Incoming @ {currentRole.company}
+                        Engineering Intern @ {currentRole.company}
                       </div>
                       <div className="rounded-full border border-white/35 bg-[rgba(11,20,38,0.35)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md">
                         Prev. @ Shopify, Ross Video
@@ -420,12 +418,12 @@ export default function Page() {
                         Currently
                       </p>
                       <p className="mt-2 text-lg font-semibold leading-snug">
-                        Fullscript, Search Engine team.
+                        Fullscript, AI Agents & Search.
                       </p>
                       <p className="mt-3 text-sm leading-relaxed text-white/75">
-                        Currently contributing to the Search Team at Fullscript.
-                        Working on both the Search Engine and the tooling for
-                        it.
+                        Building agent infrastructure and search for Assist,
+                        including clinical research, observability, and
+                        OpenSearch.
                       </p>
                     </div>
                   </div>
@@ -769,19 +767,16 @@ export default function Page() {
                         Built around
                       </p>
                       <p className="mt-5 font-display text-4xl leading-[0.95] tracking-[-0.04em] sm:text-5xl">
-                        AST
+                        Live
                         <br />
-                        Test
+                        Market
                         <br />
-                        Generation
+                        Intelligence
                       </p>
                       <div className="mt-8 space-y-3 text-sm text-white/75">
-                        <p>
-                          Targets untested functions instead of regenerating
-                          everything.
-                        </p>
-                        <p>Cuts token spend by being more selective.</p>
-                        <p>Gives faster feedback when a repo changes.</p>
+                        <p>Real-time trading data and news for 1,000+ users.</p>
+                        <p>Python classifiers on financial news.</p>
+                        <p>Alerts through Cloudflare Workers and Discord.</p>
                       </div>
                     </div>
                   </div>
