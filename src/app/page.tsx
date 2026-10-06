@@ -48,7 +48,6 @@ const resumeFile = "/documents/Rayhaan_Farooq_Resume_F26.pdf";
 const rotatingWords = [
   "AI agents.",
   "search engines.",
-  "full-stack products.",
   "developer tools.",
 ] as const;
 
